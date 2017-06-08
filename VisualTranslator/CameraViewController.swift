@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CameraViewController: BaseViewController {
+class CameraViewController: BaseViewController, ImagePickerControllerPresenter {
 
     // Outlets
     
@@ -37,6 +37,17 @@ class CameraViewController: BaseViewController {
             currentLanguageLabel.textAlignment = .center
             currentLanguageLabel.textColor = .black
             currentLanguageLabel.font = .languageLabel
+        }
+    }
+    
+    // MARK: - User interaction
+    
+    
+    @IBAction func cameraButtonTapped(_ sender: Any) {
+        presentImagePickerController { [weak self] image in
+            if let data = image.uploadData(resizedToWidth: 100) {
+                //self?.viewModel.imageData = data
+            }
         }
     }
     

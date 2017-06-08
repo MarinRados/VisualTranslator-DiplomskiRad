@@ -28,6 +28,9 @@
                                     <constraint firstAttribute="width" constant="100" id="Dhe-dY-pjW"/>
                                     <constraint firstAttribute="height" constant="100" id="Erm-V9-KZH"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="cameraButtonTapped:" destination="GSq-Up-H65" eventType="touchUpInside" id="hyr-X0-JPo"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghv-IU-TeA">
                                 <rect key="frame" x="56" y="607" width="263" height="30"/>

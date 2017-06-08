@@ -24,6 +24,8 @@
 		EA7767F91EE81F53001323D8 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7767F81EE81F53001323D8 /* BaseViewController.swift */; };
 		EA7767FC1EE822AB001323D8 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7767FB1EE822AB001323D8 /* Colors.swift */; };
 		EA7767FE1EE93B51001323D8 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7767FD1EE93B51001323D8 /* Fonts.swift */; };
+		EA7768011EE94033001323D8 /* ImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7768001EE94033001323D8 /* ImagePickerViewController.swift */; };
+		EA7768031EE94461001323D8 /* UIIMage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7768021EE94461001323D8 /* UIIMage+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		EA7767F81EE81F53001323D8 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		EA7767FB1EE822AB001323D8 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		EA7767FD1EE93B51001323D8 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		EA7768001EE94033001323D8 /* ImagePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerViewController.swift; sourceTree = "<group>"; };
+		EA7768021EE94461001323D8 /* UIIMage+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIIMage+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,7 @@
 		EA21D2641EE6D73800184F58 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				EA7767FF1EE94015001323D8 /* Common */,
 				EA7767F61EE80748001323D8 /* LaunchScreen.storyboard */,
 				EA21D2681EE6E4E900184F58 /* MainCoordinator.swift */,
 				EA7767E41EE7F577001323D8 /* Vision */,
@@ -131,6 +136,7 @@
 			children = (
 				EA21D26B1EE6E5F200184F58 /* UIViewController+Extensions.swift */,
 				EA21D26D1EE6F96900184F58 /* UITabBarItem+Extensions.swift */,
+				EA7768021EE94461001323D8 /* UIIMage+Extensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -178,6 +184,14 @@
 				EA7767FD1EE93B51001323D8 /* Fonts.swift */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		EA7767FF1EE94015001323D8 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				EA7768001EE94033001323D8 /* ImagePickerViewController.swift */,
+			);
+			name = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +274,7 @@
 				EA7767F31EE7FCA1001323D8 /* MenuViewController.swift in Sources */,
 				EA7767F91EE81F53001323D8 /* BaseViewController.swift in Sources */,
 				EA7767E91EE7F940001323D8 /* BaseNavigationController.swift in Sources */,
+				EA7768011EE94033001323D8 /* ImagePickerViewController.swift in Sources */,
 				EA21D26C1EE6E5F200184F58 /* UIViewController+Extensions.swift in Sources */,
 				EA21D26E1EE6F96900184F58 /* UITabBarItem+Extensions.swift in Sources */,
 				EA21D2511EE6B59E00184F58 /* AppDelegate.swift in Sources */,
@@ -267,6 +282,7 @@
 				EA21D2691EE6E4E900184F58 /* MainCoordinator.swift in Sources */,
 				EA7767F01EE7FC66001323D8 /* QuizCoordinator.swift in Sources */,
 				EA21D2661EE6D77200184F58 /* BaseCoordinator.swift in Sources */,
+				EA7768031EE94461001323D8 /* UIIMage+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
