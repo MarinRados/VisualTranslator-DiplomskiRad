@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MenuViewController: BaseViewController {
+final class MenuViewController: BaseViewController {
 
     
     @IBOutlet weak var easyQuizWithPicturesButton: UIButton! {

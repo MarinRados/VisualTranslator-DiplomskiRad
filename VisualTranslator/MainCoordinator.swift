@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class MainCoordinator: Coordinator {
+final class MainCoordinator: Coordinator {
     
     fileprivate var childCoordinators: [Coordinator] = [
         VisionCoordinator(),

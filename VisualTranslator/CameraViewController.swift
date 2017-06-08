@@ -8,9 +8,9 @@
 
 import UIKit
 
-class CameraViewController: BaseViewController, ImagePickerControllerPresenter {
+final class CameraViewController: BaseViewController, ImagePickerControllerPresenter {
 
-    // Outlets
+    //MARK: - Outlets
     
     @IBOutlet weak var cameraButton: UIButton! {
         didSet {
@@ -40,13 +40,17 @@ class CameraViewController: BaseViewController, ImagePickerControllerPresenter {
         }
     }
     
-    // MARK: - User interaction
+    // MARK: - Dependencies
     
+    var viewModel: CameraViewModel!
+    
+    // MARK: - User interaction
     
     @IBAction func cameraButtonTapped(_ sender: Any) {
         presentImagePickerController { [weak self] image in
-            if let data = image.uploadData(resizedToWidth: 100) {
-                //self?.viewModel.imageData = data
+            if let data = image.uploadData(resizedToWidth: (self?.view.bounds.width)! - 40) {
+                //TODO: - unwrap
+                self?.viewModel.goToTranslation(image: data)
             }
         }
     }
