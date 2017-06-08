@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,16 +22,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Camera" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iaF-hp-bNV">
-                                <rect key="frame" x="131" y="323" width="112" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gRX-bX-r9w">
+                                <rect key="frame" x="137" y="283" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Dhe-dY-pjW"/>
+                                    <constraint firstAttribute="height" constant="100" id="Erm-V9-KZH"/>
+                                </constraints>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghv-IU-TeA">
+                                <rect key="frame" x="56" y="607" width="263" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="gOh-na-aCd"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i6X-wB-uHg">
+                                <rect key="frame" x="166.5" y="566" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="ghv-IU-TeA" secondAttribute="trailing" constant="40" id="297-fl-is3"/>
+                            <constraint firstItem="gRX-bX-r9w" firstAttribute="centerX" secondItem="xJj-Gt-kSQ" secondAttribute="centerX" id="2Ac-Qo-lal"/>
+                            <constraint firstItem="Tlf-qZ-WIw" firstAttribute="top" secondItem="ghv-IU-TeA" secondAttribute="bottom" constant="30" id="44r-yu-tNn"/>
+                            <constraint firstItem="i6X-wB-uHg" firstAttribute="centerX" secondItem="xJj-Gt-kSQ" secondAttribute="centerX" id="NGo-H0-bAD"/>
+                            <constraint firstItem="ghv-IU-TeA" firstAttribute="top" secondItem="i6X-wB-uHg" secondAttribute="bottom" constant="20" id="TT2-45-T16"/>
+                            <constraint firstItem="ghv-IU-TeA" firstAttribute="leading" secondItem="xJj-Gt-kSQ" secondAttribute="leadingMargin" constant="40" id="d8P-7T-zXQ"/>
+                            <constraint firstItem="gRX-bX-r9w" firstAttribute="centerY" secondItem="xJj-Gt-kSQ" secondAttribute="centerY" id="fHf-r6-fzX"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cameraButton" destination="gRX-bX-r9w" id="nS3-Ri-rSR"/>
+                        <outlet property="changeLanguageButton" destination="ghv-IU-TeA" id="jUa-Xd-SMr"/>
+                        <outlet property="currentLanguageLabel" destination="i6X-wB-uHg" id="wrz-bc-2vN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qSV-VA-lFg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -21,6 +21,9 @@
 		EA7767F31EE7FCA1001323D8 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7767F21EE7FCA1001323D8 /* MenuViewController.swift */; };
 		EA7767F51EE7FCB7001323D8 /* MenuViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA7767F41EE7FCB7001323D8 /* MenuViewController.storyboard */; };
 		EA7767F71EE80748001323D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA7767F61EE80748001323D8 /* LaunchScreen.storyboard */; };
+		EA7767F91EE81F53001323D8 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7767F81EE81F53001323D8 /* BaseViewController.swift */; };
+		EA7767FC1EE822AB001323D8 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7767FB1EE822AB001323D8 /* Colors.swift */; };
+		EA7767FE1EE93B51001323D8 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7767FD1EE93B51001323D8 /* Fonts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		EA7767F21EE7FCA1001323D8 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		EA7767F41EE7FCB7001323D8 /* MenuViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MenuViewController.storyboard; sourceTree = "<group>"; };
 		EA7767F61EE80748001323D8 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EA7767F81EE81F53001323D8 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		EA7767FB1EE822AB001323D8 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		EA7767FD1EE93B51001323D8 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +81,7 @@
 				EA21D2671EE6D78F00184F58 /* Base */,
 				EA21D26A1EE6E5D700184F58 /* Extensions */,
 				EA21D2641EE6D73800184F58 /* UI */,
+				EA7767FA1EE82299001323D8 /* Resources */,
 				EA21D2621EE6B5CE00184F58 /* Application */,
 				EA21D2631EE6B6C400184F58 /* Resources */,
 			);
@@ -114,6 +121,7 @@
 			children = (
 				EA21D2651EE6D77200184F58 /* BaseCoordinator.swift */,
 				EA7767E81EE7F940001323D8 /* BaseNavigationController.swift */,
+				EA7767F81EE81F53001323D8 /* BaseViewController.swift */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -161,6 +169,15 @@
 				EA7767F41EE7FCB7001323D8 /* MenuViewController.storyboard */,
 			);
 			name = Menu;
+			sourceTree = "<group>";
+		};
+		EA7767FA1EE82299001323D8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EA7767FB1EE822AB001323D8 /* Colors.swift */,
+				EA7767FD1EE93B51001323D8 /* Fonts.swift */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,7 +255,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA7767E71EE7F5BE001323D8 /* VisionCoordinator.swift in Sources */,
+				EA7767FC1EE822AB001323D8 /* Colors.swift in Sources */,
+				EA7767FE1EE93B51001323D8 /* Fonts.swift in Sources */,
 				EA7767F31EE7FCA1001323D8 /* MenuViewController.swift in Sources */,
+				EA7767F91EE81F53001323D8 /* BaseViewController.swift in Sources */,
 				EA7767E91EE7F940001323D8 /* BaseNavigationController.swift in Sources */,
 				EA21D26C1EE6E5F200184F58 /* UIViewController+Extensions.swift in Sources */,
 				EA21D26E1EE6F96900184F58 /* UITabBarItem+Extensions.swift in Sources */,

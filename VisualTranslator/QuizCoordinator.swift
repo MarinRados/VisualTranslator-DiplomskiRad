@@ -17,7 +17,7 @@ final class QuizCoordinator: Coordinator {
         let vc = MenuViewController.instance()
         
         navigationController.viewControllers = [vc]
-        navigationController.isNavigationBarHidden = false
+        vc.navigationBarDisplayMode = .always
         return navigationController
     }
 }

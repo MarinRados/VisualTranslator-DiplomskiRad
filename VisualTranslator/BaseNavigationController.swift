@@ -13,7 +13,7 @@ class BaseNavigationController: UINavigationController {
     func customizeNavigationBar(_ navigationItem: UINavigationItem) {
         removeShadowFromNavbar()
         navigationBar.barTintColor = .black
-        navigationBar.tintColor = .white
+        navigationBar.tintColor = UIColor.white
         navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
     }
     

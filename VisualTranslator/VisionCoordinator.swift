@@ -16,7 +16,7 @@ final class VisionCoordinator: Coordinator {
         let vc = CameraViewController.instance()
         
         navigationController.viewControllers = [vc]
-        navigationController.isNavigationBarHidden = false
+        vc.navigationBarDisplayMode = .always
         return navigationController
     }
 }

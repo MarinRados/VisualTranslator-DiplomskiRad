@@ -21,16 +21,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Quiz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9J-kV-N2S">
-                                <rect key="frame" x="166" y="323" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="VxY-yi-1Ly">
+                                <rect key="frame" x="30" y="183.5" width="315" height="300"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0cN-Fp-GkP">
+                                        <rect key="frame" x="0.0" y="0.0" width="315" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="agP-dN-LZa"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B8a-Vy-IBY">
+                                        <rect key="frame" x="0.0" y="80" width="315" height="60"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UmN-ej-ThP">
+                                        <rect key="frame" x="0.0" y="160" width="315" height="60"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1vd-Be-6De">
+                                        <rect key="frame" x="0.0" y="240" width="315" height="60"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="0cN-Fp-GkP" firstAttribute="height" secondItem="UmN-ej-ThP" secondAttribute="height" id="7sw-j5-sRM"/>
+                                    <constraint firstItem="0cN-Fp-GkP" firstAttribute="height" secondItem="1vd-Be-6De" secondAttribute="height" id="A06-iy-Jhk"/>
+                                    <constraint firstItem="0cN-Fp-GkP" firstAttribute="height" secondItem="B8a-Vy-IBY" secondAttribute="height" id="aG2-xb-NDW"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VxY-yi-1Ly" firstAttribute="centerY" secondItem="ysW-c9-hZY" secondAttribute="centerY" id="o3l-B7-FRK"/>
+                            <constraint firstAttribute="trailing" secondItem="VxY-yi-1Ly" secondAttribute="trailing" constant="30" id="tJM-1b-ynq"/>
+                            <constraint firstItem="VxY-yi-1Ly" firstAttribute="leading" secondItem="ysW-c9-hZY" secondAttribute="leading" constant="30" id="yWP-dt-w56"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="easyQuizWithPicturesButton" destination="0cN-Fp-GkP" id="Zx8-iq-v51"/>
+                        <outlet property="easyQuizWithoutPictures" destination="UmN-ej-ThP" id="USB-DW-d08"/>
+                        <outlet property="hardQuizWithPicturesButton" destination="B8a-Vy-IBY" id="0YD-q6-LH1"/>
+                        <outlet property="hardQuizWithoutPicturesButton" destination="1vd-Be-6De" id="MSf-c4-fjS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PoY-tK-ygn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
