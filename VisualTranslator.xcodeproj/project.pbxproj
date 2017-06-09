@@ -30,7 +30,23 @@
 		EA7768081EE946F8001323D8 /* TranslationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7768071EE946F8001323D8 /* TranslationViewController.swift */; };
 		EA77680A1EE94AD3001323D8 /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7768091EE94AD3001323D8 /* CameraViewModel.swift */; };
 		EA77680C1EE94AE9001323D8 /* TranslationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA77680B1EE94AE9001323D8 /* TranslationViewModel.swift */; };
+		EAEC6E341EEAE4FC00A0D76D /* LanguageTranslatorV2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAEC6E321EEAE4FC00A0D76D /* LanguageTranslatorV2.framework */; };
+		EAEC6E351EEAE4FC00A0D76D /* VisualRecognitionV3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAEC6E331EEAE4FC00A0D76D /* VisualRecognitionV3.framework */; };
+		EAEC6E371EEAE57300A0D76D /* RestKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAEC6E361EEAE57300A0D76D /* RestKit.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EAEC6E2F1EEAE3DD00A0D76D /* Copy Files */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+			);
+			name = "Copy Files";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		EA21D24D1EE6B59E00184F58 /* VisualTranslator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VisualTranslator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,6 +74,9 @@
 		EA7768071EE946F8001323D8 /* TranslationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranslationViewController.swift; sourceTree = "<group>"; };
 		EA7768091EE94AD3001323D8 /* CameraViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
 		EA77680B1EE94AE9001323D8 /* TranslationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranslationViewModel.swift; sourceTree = "<group>"; };
+		EAEC6E321EEAE4FC00A0D76D /* LanguageTranslatorV2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LanguageTranslatorV2.framework; path = Carthage/Build/iOS/LanguageTranslatorV2.framework; sourceTree = "<group>"; };
+		EAEC6E331EEAE4FC00A0D76D /* VisualRecognitionV3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VisualRecognitionV3.framework; path = Carthage/Build/iOS/VisualRecognitionV3.framework; sourceTree = "<group>"; };
+		EAEC6E361EEAE57300A0D76D /* RestKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RestKit.framework; path = Carthage/Build/iOS/RestKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +84,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAEC6E341EEAE4FC00A0D76D /* LanguageTranslatorV2.framework in Frameworks */,
+				EAEC6E351EEAE4FC00A0D76D /* VisualRecognitionV3.framework in Frameworks */,
+				EAEC6E371EEAE57300A0D76D /* RestKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +98,7 @@
 			children = (
 				EA21D24F1EE6B59E00184F58 /* VisualTranslator */,
 				EA21D24E1EE6B59E00184F58 /* Products */,
+				EAEC6E311EEAE4FC00A0D76D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -214,6 +237,16 @@
 			name = Translation;
 			sourceTree = "<group>";
 		};
+		EAEC6E311EEAE4FC00A0D76D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EAEC6E361EEAE57300A0D76D /* RestKit.framework */,
+				EAEC6E321EEAE4FC00A0D76D /* LanguageTranslatorV2.framework */,
+				EAEC6E331EEAE4FC00A0D76D /* VisualRecognitionV3.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -224,6 +257,8 @@
 				EA21D2491EE6B59E00184F58 /* Sources */,
 				EA21D24A1EE6B59E00184F58 /* Frameworks */,
 				EA21D24B1EE6B59E00184F58 /* Resources */,
+				EAEC6E2F1EEAE3DD00A0D76D /* Copy Files */,
+				EAEC6E301EEAE47A00A0D76D /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -283,6 +318,25 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		EAEC6E301EEAE47A00A0D76D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/VisualRecognitionV3.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/LanguageTranslatorV2.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RestKit.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EA21D2491EE6B59E00184F58 /* Sources */ = {
@@ -411,6 +465,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = R9K68WP8ET;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = VisualTranslator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = marinrados.VisualTranslator;
@@ -424,6 +482,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = R9K68WP8ET;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = VisualTranslator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = marinrados.VisualTranslator;

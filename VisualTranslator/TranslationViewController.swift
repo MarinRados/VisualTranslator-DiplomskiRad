@@ -22,12 +22,35 @@ final class TranslationViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var recognitionLabel: UILabel! {
+    @IBOutlet weak var firstChoiceButton: UIButton! {
         didSet {
-            recognitionLabel.text = "Recognition"
-            recognitionLabel.textAlignment = .center
-            recognitionLabel.textColor = .black
-            recognitionLabel.font = .languageLabel
+            firstChoiceButton.setTitle("First", for: .normal)
+            firstChoiceButton.backgroundColor = .black
+            firstChoiceButton.tintColor = .white
+        }
+    }
+    
+    @IBOutlet weak var secondChoiceButton: UIButton! {
+        didSet {
+            secondChoiceButton.setTitle("Second", for: .normal)
+            secondChoiceButton.backgroundColor = .black
+            secondChoiceButton.tintColor = .white
+        }
+    }
+    
+    @IBOutlet weak var thirdChoiceButton: UIButton! {
+        didSet {
+            thirdChoiceButton.setTitle("Third", for: .normal)
+            thirdChoiceButton.backgroundColor = .black
+            thirdChoiceButton.tintColor = .white
+        }
+    }
+    
+    @IBOutlet weak var fourthChoiceButton: UIButton! {
+        didSet {
+            fourthChoiceButton.setTitle("Fourth", for: .normal)
+            fourthChoiceButton.backgroundColor = .black
+            fourthChoiceButton.tintColor = .white
         }
     }
     
@@ -58,6 +81,13 @@ final class TranslationViewController: UIViewController {
         super.viewDidLoad()
         
         navigationItem.title = "Translation"
+        
+        viewModel.getRecognition { [weak self] recognitions in
+            self?.firstChoiceButton.setTitle(recognitions[0], for: .normal)
+            self?.secondChoiceButton.setTitle(recognitions[1], for: .normal)
+            self?.thirdChoiceButton.setTitle(recognitions[2], for: .normal)
+            self?.fourthChoiceButton.setTitle(recognitions[3], for: .normal)
+        }
     }
 
 }
