@@ -15,8 +15,36 @@ final class TranslationViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView! {
         didSet {
             if let data = viewModel.image {
-                imageView.image = UIImage(data: data)
+                let image = UIImage(data: data)?.fixOrientation()
+                imageView.image = image
+                imageView.contentMode = .scaleAspectFit
             }
+        }
+    }
+    
+    @IBOutlet weak var recognitionLabel: UILabel! {
+        didSet {
+            recognitionLabel.text = "Recognition"
+            recognitionLabel.textAlignment = .center
+            recognitionLabel.textColor = .black
+            recognitionLabel.font = .languageLabel
+        }
+    }
+    
+    @IBOutlet weak var translationLabel: UILabel! {
+        didSet {
+            translationLabel.text = "Translation"
+            translationLabel.textAlignment = .center
+            translationLabel.textColor = .black
+            translationLabel.font = .languageLabel
+        }
+    }
+    
+    @IBOutlet weak var saveButton: UIButton! {
+        didSet {
+            saveButton.setTitle("Save", for: .normal)
+            saveButton.backgroundColor = .black
+            saveButton.tintColor = .white
         }
     }
     

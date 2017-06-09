@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,21 +23,50 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wVS-Pv-qN3">
-                                <rect key="frame" x="67" y="50" width="240" height="120"/>
+                                <rect key="frame" x="67" y="50" width="240" height="240"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="0mT-9k-NQp"/>
+                                    <constraint firstAttribute="height" constant="240" id="0mT-9k-NQp"/>
                                     <constraint firstAttribute="width" constant="240" id="lRL-pp-mHz"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L2D-Wu-HKN">
+                                <rect key="frame" x="166" y="546" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tWj-cq-HlI">
+                                <rect key="frame" x="56" y="597" width="263" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="kpi-Sg-s2W"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdD-9p-TmM">
+                                <rect key="frame" x="166" y="495" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="L2D-Wu-HKN" firstAttribute="top" secondItem="kdD-9p-TmM" secondAttribute="bottom" constant="30" id="7RB-wz-utS"/>
+                            <constraint firstItem="tWj-cq-HlI" firstAttribute="top" secondItem="L2D-Wu-HKN" secondAttribute="bottom" constant="30" id="CG5-wk-okb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tWj-cq-HlI" secondAttribute="trailing" constant="40" id="G4C-Ko-gUt"/>
+                            <constraint firstItem="tWj-cq-HlI" firstAttribute="leading" secondItem="qM2-hG-LI3" secondAttribute="leadingMargin" constant="40" id="VNj-9z-G3c"/>
                             <constraint firstItem="wVS-Pv-qN3" firstAttribute="centerX" secondItem="qM2-hG-LI3" secondAttribute="centerX" id="Ywc-BW-URB"/>
+                            <constraint firstItem="HfM-Fm-T8h" firstAttribute="top" secondItem="tWj-cq-HlI" secondAttribute="bottom" constant="30" id="bX5-y5-EB8"/>
                             <constraint firstItem="wVS-Pv-qN3" firstAttribute="top" secondItem="yG9-jw-qaN" secondAttribute="bottom" constant="30" id="ezs-lZ-gfC"/>
+                            <constraint firstItem="kdD-9p-TmM" firstAttribute="centerX" secondItem="qM2-hG-LI3" secondAttribute="centerX" id="kRY-sY-UgG"/>
+                            <constraint firstItem="L2D-Wu-HKN" firstAttribute="centerX" secondItem="qM2-hG-LI3" secondAttribute="centerX" id="qW7-vw-tFC"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="wVS-Pv-qN3" id="lGX-LQ-0k2"/>
+                        <outlet property="recognitionLabel" destination="kdD-9p-TmM" id="9KX-Gt-l3c"/>
+                        <outlet property="saveButton" destination="tWj-cq-HlI" id="DIH-B1-Xs6"/>
+                        <outlet property="translationLabel" destination="L2D-Wu-HKN" id="YHv-7h-hmA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bgy-lv-g0v" userLabel="First Responder" sceneMemberID="firstResponder"/>
