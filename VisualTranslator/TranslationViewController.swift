@@ -24,7 +24,6 @@ final class TranslationViewController: UIViewController {
     
     @IBOutlet weak var firstChoiceButton: UIButton! {
         didSet {
-            firstChoiceButton.setTitle("First", for: .normal)
             firstChoiceButton.backgroundColor = .black
             firstChoiceButton.tintColor = .white
         }
@@ -32,7 +31,6 @@ final class TranslationViewController: UIViewController {
     
     @IBOutlet weak var secondChoiceButton: UIButton! {
         didSet {
-            secondChoiceButton.setTitle("Second", for: .normal)
             secondChoiceButton.backgroundColor = .black
             secondChoiceButton.tintColor = .white
         }
@@ -40,7 +38,7 @@ final class TranslationViewController: UIViewController {
     
     @IBOutlet weak var thirdChoiceButton: UIButton! {
         didSet {
-            thirdChoiceButton.setTitle("Third", for: .normal)
+            thirdChoiceButton.setTitle("", for: .normal)
             thirdChoiceButton.backgroundColor = .black
             thirdChoiceButton.tintColor = .white
         }
@@ -48,7 +46,7 @@ final class TranslationViewController: UIViewController {
     
     @IBOutlet weak var fourthChoiceButton: UIButton! {
         didSet {
-            fourthChoiceButton.setTitle("Fourth", for: .normal)
+            fourthChoiceButton.setTitle("", for: .normal)
             fourthChoiceButton.backgroundColor = .black
             fourthChoiceButton.tintColor = .white
         }
@@ -75,6 +73,13 @@ final class TranslationViewController: UIViewController {
     
     var viewModel: TranslationViewModel!
     
+    // MARK: - User Interaction
+    
+    @IBAction func changeTranslation(_ sender: UIButton) {
+        guard let title = sender.currentTitle else { return }
+        viewModel.translate(title, to: "es")
+    }
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -87,6 +92,10 @@ final class TranslationViewController: UIViewController {
             self?.secondChoiceButton.setTitle(recognitions[1], for: .normal)
             self?.thirdChoiceButton.setTitle(recognitions[2], for: .normal)
             self?.fourthChoiceButton.setTitle(recognitions[3], for: .normal)
+        }
+        
+        viewModel.onTranslation = { [weak self] translation in
+            self?.translationLabel.text = translation
         }
     }
 
