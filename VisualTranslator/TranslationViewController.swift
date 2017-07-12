@@ -77,7 +77,7 @@ final class TranslationViewController: UIViewController {
     
     @IBAction func changeTranslation(_ sender: UIButton) {
         guard let title = sender.currentTitle else { return }
-        viewModel.translate(title, to: "es")
+        viewModel.translate(title)
     }
     
     // MARK: - Lifecycle

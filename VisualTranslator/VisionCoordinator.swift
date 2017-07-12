@@ -36,7 +36,7 @@ final class VisionCoordinator: NavCoordinator, Coordinator {
     
     func createTranslation(image: Data) -> UIViewController {
         let viewController = TranslationViewController.instance()
-        let viewModel = TranslationViewModel(image: image)
+        let viewModel = TranslationViewModel(image: image, persistenceService: serviceFactory.persistenceService)
         
         viewController.viewModel = viewModel
         return viewController

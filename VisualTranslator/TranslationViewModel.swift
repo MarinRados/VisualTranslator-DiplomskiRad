@@ -17,8 +17,13 @@ final class TranslationViewModel {
     let image: Data?
     let defaultLanguage = "en"
     
-    init(image: Data) {
+    // MARK: - Dependecies
+    
+    var persistenceService: PersistenceServiceProtocol!
+    
+    init(image: Data, persistenceService: PersistenceServiceProtocol) {
         self.image = image
+        self.persistenceService = persistenceService
     }
     
     func getImagePath() -> URL {
@@ -32,7 +37,7 @@ final class TranslationViewModel {
     
     
     func getRecognition(onComplete: @escaping (([String])-> Void)) {
-        let apiKey = "610bace967b0f493493b683451fb2406e2b7e35c"
+        let apiKey = "313aa2d25dafe93ac0264926740d7701c04603bb"
         let version = "2017-06-13"
         let visualRecognition = VisualRecognition(apiKey: apiKey, version: version)
         
@@ -53,14 +58,16 @@ final class TranslationViewModel {
         }
     }
     
-    func translate(_ word: String, to language: String) {
-        let username = "1cfe3a91-781c-4077-9f2d-93a2ad04f30f"
-        let password = "Y80zxVlNMDYJ"
+    func translate(_ word: String) {
+        let username = "961cf80d-6688-4015-be8e-1dfd415687a1"
+        let password = "uFYZg0WRBKpt"
         let languageTranslator = LanguageTranslator(username: username, password: password)
+        
+        guard let targetLanguage = persistenceService.currentLanguage?.abrv else { return }
         
         languageTranslator.translate(word,
                                      from: defaultLanguage,
-                                     to: language, failure: { (error) in
+                                     to: targetLanguage, failure: { (error) in
                                         print(error)
         }) { (translation) in
             
