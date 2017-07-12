@@ -17,7 +17,12 @@ final class VisionCoordinator: Coordinator {
         let viewModel = CameraViewModel()
         vc.viewModel = viewModel
         
-        viewModel.onGoToTranslation = { [weak self] image in            self?.showTranslation(image: image)
+        viewModel.onGoToTranslation = { [weak self] image in
+            self?.showTranslation(image: image)
+        }
+        
+        viewModel.onGoToLanguage = { [weak self] in
+            self?.showLanguagePicker()
         }
         
         navigationController.viewControllers = [vc]
@@ -35,5 +40,22 @@ final class VisionCoordinator: Coordinator {
         
         viewController.viewModel = viewModel
         return viewController
+    }
+    
+    private func showLanguagePicker() {
+        
+        let viewController = LanguageViewController.instance()
+        
+        let viewModel = LanguageViewModel()
+        viewController.viewModel = viewModel
+        
+        let languageController = BaseNavigationController()
+        
+        viewModel.onComplete = { _ in
+            languageController.dismiss(animated: true)
+        }
+        
+        languageController.viewControllers = [viewController]
+        navigationController.present(languageController, animated: true)
     }
 }

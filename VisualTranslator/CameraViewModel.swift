@@ -13,10 +13,15 @@ final class CameraViewModel {
     // MARK: - Callbacks
     
     var onGoToTranslation: ((Data) -> Void)?
+    var onGoToLanguage: (() -> Void)?
     
     // MARK: - Navigation
     
     func goToTranslation(image: Data) {
         onGoToTranslation?(image)
+    }
+    
+    func goToLanguage() {
+        onGoToLanguage?()
     }
 }

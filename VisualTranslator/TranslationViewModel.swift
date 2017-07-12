@@ -39,7 +39,10 @@ final class TranslationViewModel {
         let url = getImagePath()
         visualRecognition.classify(imageFile: url) { images in
             
-            let classes = images.images.first!.classifiers.first!.classes
+            guard let firstImage = images.images.first,
+            let firstClassifier = firstImage.classifiers.first else { return }
+            
+            let classes = firstClassifier.classes
             let firstFour = classes.prefix(4)
             
             let recognitions = firstFour.map { $0.classification }
@@ -61,8 +64,10 @@ final class TranslationViewModel {
                                         print(error)
         }) { (translation) in
             
+            guard let firstElement = translation.translations.first else { return }
+            
             DispatchQueue.main.async {
-                self.onTranslation?(translation.translations.first!.translation)
+                self.onTranslation?(firstElement.translation)
             }
         }
     }

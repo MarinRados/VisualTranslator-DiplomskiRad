@@ -55,6 +55,10 @@ final class CameraViewController: BaseViewController, ImagePickerControllerPrese
         }
     }
     
+    @IBAction func languageButtonTapped(_ sender: Any) {
+            viewModel.goToLanguage()
+    }
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {

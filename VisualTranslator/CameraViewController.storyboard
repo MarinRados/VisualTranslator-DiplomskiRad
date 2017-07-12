@@ -38,6 +38,9 @@
                                     <constraint firstAttribute="height" constant="40" id="gOh-na-aCd"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="languageButtonTapped:" destination="GSq-Up-H65" eventType="touchUpInside" id="CUL-Wy-eg1"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i6X-wB-uHg">
                                 <rect key="frame" x="166.5" y="556" width="42" height="21"/>
