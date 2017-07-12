@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class LanguageViewController: UIViewController {
+final class LanguageViewController: BaseViewController {
     
     var viewModel: LanguageViewModel!
 
@@ -22,8 +22,17 @@ final class LanguageViewController: UIViewController {
         
         navigationItem.title = "Choose a language"
         
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        tableView.separatorColor = .lightGray
+        tableView.tableFooterView = UIView.init(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 1))
+        tableView.tableFooterView?.backgroundColor = .lightGray
+        
         style()
     }
+    
+    // MARK: - User interaction
     
     @objc
     private func dismissTapped() {
@@ -42,12 +51,20 @@ extension LanguageViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return viewModel.languages.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LanguageCell", for: indexPath) as! LanguageCell
         
+        cell.separatorInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 0)
+        cell.selectionStyle = .none
+        cell.languageLabel.text = viewModel.languages[indexPath.row].name
+        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.changeCurrentLanguage(to: viewModel.languages[indexPath.row])
     }
 }

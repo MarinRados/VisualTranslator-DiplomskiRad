@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		EA11D1AD1F151519000F6B1B /* LanguageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA11D1AC1F151519000F6B1B /* LanguageViewModel.swift */; };
+		EA11D1B01F161680000F6B1B /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA11D1AF1F161680000F6B1B /* Language.swift */; };
 		EA21D2511EE6B59E00184F58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA21D2501EE6B59E00184F58 /* AppDelegate.swift */; };
 		EA21D2581EE6B59E00184F58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA21D2571EE6B59E00184F58 /* Assets.xcassets */; };
 		EA21D2661EE6D77200184F58 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA21D2651EE6D77200184F58 /* BaseCoordinator.swift */; };
 		EA21D2691EE6E4E900184F58 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA21D2681EE6E4E900184F58 /* MainCoordinator.swift */; };
 		EA21D26C1EE6E5F200184F58 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA21D26B1EE6E5F200184F58 /* UIViewController+Extensions.swift */; };
 		EA21D26E1EE6F96900184F58 /* UITabBarItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA21D26D1EE6F96900184F58 /* UITabBarItem+Extensions.swift */; };
+		EA28A18B1F16287800B5184B /* UserDefaults+PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA28A18A1F16287800B5184B /* UserDefaults+PersistenceService.swift */; };
+		EA28A18D1F162B6000B5184B /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA28A18C1F162B6000B5184B /* ServiceFactory.swift */; };
 		EA7767E71EE7F5BE001323D8 /* VisionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7767E61EE7F5BE001323D8 /* VisionCoordinator.swift */; };
 		EA7767E91EE7F940001323D8 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7767E81EE7F940001323D8 /* BaseNavigationController.swift */; };
 		EA7767EB1EE7F9F4001323D8 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7767EA1EE7F9F4001323D8 /* CameraViewController.swift */; };
@@ -54,6 +57,7 @@
 
 /* Begin PBXFileReference section */
 		EA11D1AC1F151519000F6B1B /* LanguageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageViewModel.swift; sourceTree = "<group>"; };
+		EA11D1AF1F161680000F6B1B /* Language.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		EA21D24D1EE6B59E00184F58 /* VisualTranslator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VisualTranslator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA21D2501EE6B59E00184F58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA21D2571EE6B59E00184F58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -62,6 +66,8 @@
 		EA21D2681EE6E4E900184F58 /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		EA21D26B1EE6E5F200184F58 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		EA21D26D1EE6F96900184F58 /* UITabBarItem+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITabBarItem+Extensions.swift"; sourceTree = "<group>"; };
+		EA28A18A1F16287800B5184B /* UserDefaults+PersistenceService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults+PersistenceService.swift"; sourceTree = "<group>"; };
+		EA28A18C1F162B6000B5184B /* ServiceFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceFactory.swift; sourceTree = "<group>"; };
 		EA7767E61EE7F5BE001323D8 /* VisionCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisionCoordinator.swift; sourceTree = "<group>"; };
 		EA7767E81EE7F940001323D8 /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		EA7767EA1EE7F9F4001323D8 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +107,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EA11D1AE1F16166C000F6B1B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EA11D1AF1F161680000F6B1B /* Language.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		EA21D2441EE6B59E00184F58 = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +138,7 @@
 				EA21D2671EE6D78F00184F58 /* Base */,
 				EA21D26A1EE6E5D700184F58 /* Extensions */,
 				EA21D2641EE6D73800184F58 /* UI */,
+				EA11D1AE1F16166C000F6B1B /* Models */,
 				EA7767FA1EE82299001323D8 /* Resources */,
 				EA21D2621EE6B5CE00184F58 /* Application */,
 			);
@@ -142,6 +157,7 @@
 		EA21D2641EE6D73800184F58 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				EA28A1891F16285300B5184B /* Services */,
 				EA7767FF1EE94015001323D8 /* Common */,
 				EA7767F61EE80748001323D8 /* LaunchScreen.storyboard */,
 				EA21D2681EE6E4E900184F58 /* MainCoordinator.swift */,
@@ -169,6 +185,14 @@
 				EA7768021EE94461001323D8 /* UIIMage+Extensions.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		EA28A1891F16285300B5184B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				EA28A18A1F16287800B5184B /* UserDefaults+PersistenceService.swift */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 		EA7767E41EE7F577001323D8 /* Vision */ = {
@@ -224,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				EA7768001EE94033001323D8 /* ImagePickerViewController.swift */,
+				EA28A18C1F162B6000B5184B /* ServiceFactory.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -364,12 +389,14 @@
 				EA7767E91EE7F940001323D8 /* BaseNavigationController.swift in Sources */,
 				EA7768011EE94033001323D8 /* ImagePickerViewController.swift in Sources */,
 				EA21D26C1EE6E5F200184F58 /* UIViewController+Extensions.swift in Sources */,
+				EA28A18D1F162B6000B5184B /* ServiceFactory.swift in Sources */,
 				EA77680C1EE94AE9001323D8 /* TranslationViewModel.swift in Sources */,
 				EA7768081EE946F8001323D8 /* TranslationViewController.swift in Sources */,
 				EA21D26E1EE6F96900184F58 /* UITabBarItem+Extensions.swift in Sources */,
 				EA21D2511EE6B59E00184F58 /* AppDelegate.swift in Sources */,
 				EA7767EB1EE7F9F4001323D8 /* CameraViewController.swift in Sources */,
 				EA9D61591EF16E8D00578DAB /* LanguageCell.swift in Sources */,
+				EA28A18B1F16287800B5184B /* UserDefaults+PersistenceService.swift in Sources */,
 				EA21D2691EE6E4E900184F58 /* MainCoordinator.swift in Sources */,
 				EA7767F01EE7FC66001323D8 /* QuizCoordinator.swift in Sources */,
 				EA11D1AD1F151519000F6B1B /* LanguageViewModel.swift in Sources */,
@@ -377,6 +404,7 @@
 				EA77680A1EE94AD3001323D8 /* CameraViewModel.swift in Sources */,
 				EA9D61531EF16A9500578DAB /* LanguageViewController.swift in Sources */,
 				EA7768031EE94461001323D8 /* UIIMage+Extensions.swift in Sources */,
+				EA11D1B01F161680000F6B1B /* Language.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -33,7 +33,6 @@ final class CameraViewController: BaseViewController, ImagePickerControllerPrese
     
     @IBOutlet weak var currentLanguageLabel: UILabel! {
         didSet {
-            currentLanguageLabel.text = "Current language: German"
             currentLanguageLabel.textAlignment = .center
             currentLanguageLabel.textColor = .black
             currentLanguageLabel.font = .languageLabel
@@ -66,5 +65,9 @@ final class CameraViewController: BaseViewController, ImagePickerControllerPrese
         
         navigationItem.title = "Take a picture"
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        currentLanguageLabel.text = "Current language: \(viewModel.currentLanguage.name)"
+    }
 }

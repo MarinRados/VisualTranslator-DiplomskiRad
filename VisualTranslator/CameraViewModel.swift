@@ -15,6 +15,18 @@ final class CameraViewModel {
     var onGoToTranslation: ((Data) -> Void)?
     var onGoToLanguage: (() -> Void)?
     
+    // MARK: - Dependecies
+    
+    var persistenceService: PersistenceServiceProtocol!
+    
+    init(persistenceService: PersistenceServiceProtocol) {
+        self.persistenceService = persistenceService
+    }
+    
+    var currentLanguage: Language {
+        return persistenceService.currentLanguage ?? Language(name: "German", abrv: "de")
+    }
+    
     // MARK: - Navigation
     
     func goToTranslation(image: Data) {

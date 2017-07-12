@@ -8,13 +8,13 @@
 
 import UIKit
 
-final class VisionCoordinator: Coordinator {
+final class VisionCoordinator: NavCoordinator, Coordinator {
     
     private var navigationController = BaseNavigationController()
     
     func start() -> UIViewController {
         let vc = CameraViewController.instance()
-        let viewModel = CameraViewModel()
+        let viewModel = CameraViewModel(persistenceService: serviceFactory.persistenceService)
         vc.viewModel = viewModel
         
         viewModel.onGoToTranslation = { [weak self] image in
@@ -46,7 +46,7 @@ final class VisionCoordinator: Coordinator {
         
         let viewController = LanguageViewController.instance()
         
-        let viewModel = LanguageViewModel()
+        let viewModel = LanguageViewModel(persistenceService: serviceFactory.persistenceService)
         viewController.viewModel = viewModel
         
         let languageController = BaseNavigationController()

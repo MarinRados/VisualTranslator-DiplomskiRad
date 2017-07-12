@@ -14,3 +14,8 @@ public protocol Coordinator: class {
     @discardableResult
     func start() -> UIViewController
 }
+
+class NavCoordinator {
+    
+    let serviceFactory = ServiceLocator.factory
+}
