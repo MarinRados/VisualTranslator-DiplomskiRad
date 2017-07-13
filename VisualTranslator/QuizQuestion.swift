@@ -13,6 +13,6 @@ import RealmSwift
 class QuizQuestion: Object {
     dynamic var originalText = ""
     dynamic var translatedText = ""
-    dynamic var image: UIImage?
+    dynamic var image: Data?
     dynamic var language: Language?
 }

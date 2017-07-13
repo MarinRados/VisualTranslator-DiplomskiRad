@@ -9,6 +9,8 @@
 import UIKit
 
 final class TranslationViewController: UIViewController {
+    
+    var currentOriginalText: String?
 
     // MARK: - Outlets
     
@@ -24,7 +26,7 @@ final class TranslationViewController: UIViewController {
     
     @IBOutlet weak var firstChoiceButton: UIButton! {
         didSet {
-            firstChoiceButton.backgroundColor = .black
+            firstChoiceButton.backgroundColor = .gray
             firstChoiceButton.tintColor = .white
         }
     }
@@ -80,6 +82,21 @@ final class TranslationViewController: UIViewController {
         viewModel.translate(title)
     }
     
+    @IBAction func saveButtonTapped(_ sender: Any) {
+        guard let translation = translationLabel.text else { return }
+        guard let image = viewModel.image else { return }
+        guard let original = currentOriginalText else { return }
+        viewModel.saveItem(original: original, translation: translation, image: image)
+    }
+    
+    @IBAction func translationButtonTapped(_ sender: UIButton) {
+        resetAllButtons()
+        sender.backgroundColor = .gray
+        sender.tintColor = .white
+        currentOriginalText = sender.currentTitle
+    }
+    
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -89,6 +106,7 @@ final class TranslationViewController: UIViewController {
         
         viewModel.getRecognition { [weak self] recognitions in
             self?.firstChoiceButton.setTitle(recognitions[0], for: .normal)
+            self?.currentOriginalText = self?.firstChoiceButton.currentTitle
             self?.secondChoiceButton.setTitle(recognitions[1], for: .normal)
             self?.thirdChoiceButton.setTitle(recognitions[2], for: .normal)
             self?.fourthChoiceButton.setTitle(recognitions[3], for: .normal)
@@ -99,4 +117,16 @@ final class TranslationViewController: UIViewController {
         }
     }
 
+    // MARK: - Utility
+    
+    private func resetAllButtons() {
+        firstChoiceButton.backgroundColor = .black
+        firstChoiceButton.tintColor = .white
+        secondChoiceButton.backgroundColor = .black
+        secondChoiceButton.tintColor = .white
+        thirdChoiceButton.backgroundColor = .black
+        thirdChoiceButton.tintColor = .white
+        fourthChoiceButton.backgroundColor = .black
+        fourthChoiceButton.tintColor = .white
+    }
 }

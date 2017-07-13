@@ -9,13 +9,15 @@
 import Foundation
 import VisualRecognitionV3
 import LanguageTranslatorV2
+import RealmSwift
 
 final class TranslationViewModel {
     
     var onTranslation: ((String) -> Void)?
     
     let image: Data?
-    let defaultLanguage = "en"
+    let defaultLanguage = Language(name: "English", abrv: "en")
+    
     
     // MARK: - Dependecies
     
@@ -66,7 +68,7 @@ final class TranslationViewModel {
         guard let targetLanguage = persistenceService.currentLanguage?.abrv else { return }
         
         languageTranslator.translate(word,
-                                     from: defaultLanguage,
+                                     from: defaultLanguage.abrv,
                                      to: targetLanguage, failure: { (error) in
                                         print(error)
         }) { (translation) in
@@ -76,6 +78,23 @@ final class TranslationViewModel {
             DispatchQueue.main.async {
                 self.onTranslation?(firstElement.translation)
             }
+        }
+    }
+    
+    func saveItem(original: String, translation: String, image: Data) {
+        let realm = try! Realm()
+        
+        try! realm.write {
+            let newItem = QuizQuestion()
+            
+            newItem.originalText = original
+            newItem.translatedText = translation
+            newItem.language = persistenceService.currentLanguage
+            newItem.image = image
+            
+            realm.add(newItem)
+            
+            print("U realmu: \(realm.objects(QuizQuestion))")
         }
     }
 }

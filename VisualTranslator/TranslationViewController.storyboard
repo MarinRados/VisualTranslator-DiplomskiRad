@@ -40,6 +40,9 @@
                                     <constraint firstAttribute="height" constant="40" id="kpi-Sg-s2W"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="aqo-gV-KPp" eventType="touchUpInside" id="rNZ-J8-812"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="dJC-zx-rEc">
                                 <rect key="frame" x="36" y="467" width="303" height="90"/>
@@ -51,12 +54,14 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="146.5" height="30"/>
                                                 <connections>
                                                     <action selector="changeTranslation:" destination="aqo-gV-KPp" eventType="touchUpInside" id="YEx-Qo-QVP"/>
+                                                    <action selector="translationButtonTapped:" destination="aqo-gV-KPp" eventType="touchUpInside" id="e84-53-GNU"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbn-Yx-1Hs">
                                                 <rect key="frame" x="156.5" y="0.0" width="146.5" height="30"/>
                                                 <connections>
                                                     <action selector="changeTranslation:" destination="aqo-gV-KPp" eventType="touchUpInside" id="UAN-nt-Coq"/>
+                                                    <action selector="translationButtonTapped:" destination="aqo-gV-KPp" eventType="touchUpInside" id="d3c-EI-aW5"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -68,12 +73,14 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="146.5" height="30"/>
                                                 <connections>
                                                     <action selector="changeTranslation:" destination="aqo-gV-KPp" eventType="touchUpInside" id="NIV-v4-F0X"/>
+                                                    <action selector="translationButtonTapped:" destination="aqo-gV-KPp" eventType="touchUpInside" id="qiy-UY-Co9"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ylb-tQ-kDs">
                                                 <rect key="frame" x="156.5" y="0.0" width="146.5" height="30"/>
                                                 <connections>
                                                     <action selector="changeTranslation:" destination="aqo-gV-KPp" eventType="touchUpInside" id="hG1-RB-El4"/>
+                                                    <action selector="translationButtonTapped:" destination="aqo-gV-KPp" eventType="touchUpInside" id="nK2-cs-L5m"/>
                                                 </connections>
                                             </button>
                                         </subviews>
