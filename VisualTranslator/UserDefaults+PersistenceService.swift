@@ -41,7 +41,7 @@ extension UserDefaults: PersistenceServiceProtocol {
             if let languageDictionary = object(forKey: "currentLanguage") as? [String: Any] {
                 return Language(dictionary: languageDictionary)
             } else {
-                return nil
+                return Language(name: "German", abrv: "de")
             }
         } set {
             set(newValue?.asDictionary, forKey: "currentLanguage")

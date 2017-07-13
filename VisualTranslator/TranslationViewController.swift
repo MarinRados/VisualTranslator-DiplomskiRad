@@ -106,7 +106,9 @@ final class TranslationViewController: UIViewController {
         
         viewModel.getRecognition { [weak self] recognitions in
             self?.firstChoiceButton.setTitle(recognitions[0], for: .normal)
-            self?.currentOriginalText = self?.firstChoiceButton.currentTitle
+            guard let firstButtonTitle = self?.firstChoiceButton.currentTitle else { return }
+            self?.currentOriginalText = firstButtonTitle
+            self?.viewModel.translate(firstButtonTitle)
             self?.secondChoiceButton.setTitle(recognitions[1], for: .normal)
             self?.thirdChoiceButton.setTitle(recognitions[2], for: .normal)
             self?.fourthChoiceButton.setTitle(recognitions[3], for: .normal)
