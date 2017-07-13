@@ -7,9 +7,16 @@
 //
 
 import Foundation
+import RealmSwift
 
 
-struct Language {
-    let name: String
-    let abrv: String
+class Language: Object {
+    dynamic var name: String = ""
+    dynamic var abrv: String = ""
+    
+    convenience init(name: String, abrv: String) {
+        self.init()
+        self.name = name
+        self.abrv = abrv
+    }
 }

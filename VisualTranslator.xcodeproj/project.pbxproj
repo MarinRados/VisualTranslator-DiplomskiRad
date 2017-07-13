@@ -17,6 +17,11 @@
 		EA21D26E1EE6F96900184F58 /* UITabBarItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA21D26D1EE6F96900184F58 /* UITabBarItem+Extensions.swift */; };
 		EA28A18B1F16287800B5184B /* UserDefaults+PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA28A18A1F16287800B5184B /* UserDefaults+PersistenceService.swift */; };
 		EA28A18D1F162B6000B5184B /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA28A18C1F162B6000B5184B /* ServiceFactory.swift */; };
+		EA28A1941F17695F00B5184B /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA28A1921F17695F00B5184B /* Realm.framework */; };
+		EA28A1951F17695F00B5184B /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EA28A1921F17695F00B5184B /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EA28A1961F17695F00B5184B /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA28A1931F17695F00B5184B /* RealmSwift.framework */; };
+		EA28A1971F17695F00B5184B /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EA28A1931F17695F00B5184B /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EA28A19A1F176AEB00B5184B /* QuizQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA28A1991F176AEB00B5184B /* QuizQuestion.swift */; };
 		EA7767E71EE7F5BE001323D8 /* VisionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7767E61EE7F5BE001323D8 /* VisionCoordinator.swift */; };
 		EA7767E91EE7F940001323D8 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7767E81EE7F940001323D8 /* BaseNavigationController.swift */; };
 		EA7767EB1EE7F9F4001323D8 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7767EA1EE7F9F4001323D8 /* CameraViewController.swift */; };
@@ -43,6 +48,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		EA28A1981F17695F00B5184B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EA28A1971F17695F00B5184B /* RealmSwift.framework in Embed Frameworks */,
+				EA28A1951F17695F00B5184B /* Realm.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EAEC6E2F1EEAE3DD00A0D76D /* Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -68,6 +85,11 @@
 		EA21D26D1EE6F96900184F58 /* UITabBarItem+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITabBarItem+Extensions.swift"; sourceTree = "<group>"; };
 		EA28A18A1F16287800B5184B /* UserDefaults+PersistenceService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults+PersistenceService.swift"; sourceTree = "<group>"; };
 		EA28A18C1F162B6000B5184B /* ServiceFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceFactory.swift; sourceTree = "<group>"; };
+		EA28A18E1F17694000B5184B /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "../../../Downloads/realm-swift-2.8.3/ios/swift-3.1/Realm.framework"; sourceTree = "<group>"; };
+		EA28A18F1F17694000B5184B /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "../../../Downloads/realm-swift-2.8.3/ios/swift-3.1/RealmSwift.framework"; sourceTree = "<group>"; };
+		EA28A1921F17695F00B5184B /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		EA28A1931F17695F00B5184B /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
+		EA28A1991F176AEB00B5184B /* QuizQuestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizQuestion.swift; sourceTree = "<group>"; };
 		EA7767E61EE7F5BE001323D8 /* VisionCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisionCoordinator.swift; sourceTree = "<group>"; };
 		EA7767E81EE7F940001323D8 /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		EA7767EA1EE7F9F4001323D8 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +120,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA28A1941F17695F00B5184B /* Realm.framework in Frameworks */,
+				EA28A1961F17695F00B5184B /* RealmSwift.framework in Frameworks */,
 				EAEC6E341EEAE4FC00A0D76D /* LanguageTranslatorV2.framework in Frameworks */,
 				EAEC6E351EEAE4FC00A0D76D /* VisualRecognitionV3.framework in Frameworks */,
 				EAEC6E371EEAE57300A0D76D /* RestKit.framework in Frameworks */,
@@ -111,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				EA11D1AF1F161680000F6B1B /* Language.swift */,
+				EA28A1991F176AEB00B5184B /* QuizQuestion.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -118,6 +143,8 @@
 		EA21D2441EE6B59E00184F58 = {
 			isa = PBXGroup;
 			children = (
+				EA28A1921F17695F00B5184B /* Realm.framework */,
+				EA28A1931F17695F00B5184B /* RealmSwift.framework */,
 				EA21D24F1EE6B59E00184F58 /* VisualTranslator */,
 				EA21D24E1EE6B59E00184F58 /* Products */,
 				EAEC6E311EEAE4FC00A0D76D /* Frameworks */,
@@ -277,6 +304,8 @@
 		EAEC6E311EEAE4FC00A0D76D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EA28A18E1F17694000B5184B /* Realm.framework */,
+				EA28A18F1F17694000B5184B /* RealmSwift.framework */,
 				EAEC6E361EEAE57300A0D76D /* RestKit.framework */,
 				EAEC6E321EEAE4FC00A0D76D /* LanguageTranslatorV2.framework */,
 				EAEC6E331EEAE4FC00A0D76D /* VisualRecognitionV3.framework */,
@@ -296,6 +325,7 @@
 				EA21D24B1EE6B59E00184F58 /* Resources */,
 				EAEC6E2F1EEAE3DD00A0D76D /* Copy Files */,
 				EAEC6E301EEAE47A00A0D76D /* ShellScript */,
+				EA28A1981F17695F00B5184B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -405,6 +435,7 @@
 				EA9D61531EF16A9500578DAB /* LanguageViewController.swift in Sources */,
 				EA7768031EE94461001323D8 /* UIIMage+Extensions.swift in Sources */,
 				EA11D1B01F161680000F6B1B /* Language.swift in Sources */,
+				EA28A19A1F176AEB00B5184B /* QuizQuestion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,6 +543,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = VisualTranslator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -529,6 +561,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = VisualTranslator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

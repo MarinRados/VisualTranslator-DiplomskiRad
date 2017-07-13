@@ -14,7 +14,7 @@ protocol PersistenceServiceProtocol {
 }
 
 private extension Language {
-    init?(dictionary: [String: Any]) {
+    convenience init?(dictionary: [String: Any]) {
         guard
             let abrv = dictionary["abrv"] as? String,
             let name = dictionary["name"] as? String
@@ -22,6 +22,7 @@ private extension Language {
                 return nil
         }
         
+        self.init()
         self.name = name
         self.abrv = abrv
     }

@@ -24,7 +24,7 @@ final class CameraViewModel {
     }
     
     var currentLanguage: Language {
-        return persistenceService.currentLanguage ?? Language(name: "German", abrv: "de")
+        return persistenceService.currentLanguage ?? Language()
     }
     
     // MARK: - Navigation
