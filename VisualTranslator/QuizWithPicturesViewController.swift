@@ -23,7 +23,11 @@ class QuizWithPicturesViewController: BaseViewController {
     
     @IBOutlet weak var textField: UITextField!
     
-    @IBOutlet weak var correctLabel: UILabel!
+    @IBOutlet weak var correctLabel: UILabel! {
+        didSet {
+            correctLabel.text = ""
+        }
+    }
     
     @IBOutlet weak var nextButton: UIButton! {
         didSet {
@@ -34,7 +38,17 @@ class QuizWithPicturesViewController: BaseViewController {
     }
     
     @IBAction func goToNextPage(_ sender: Any) {
-        onNextPage?()
+        if textField.text == correctAnswer {
+            correctLabel.textColor = .green
+            correctLabel.text = "Correct!"
+        } else {
+            correctLabel.textColor = .red
+            correctLabel.text = "Incorrect!"
+        }
+        let when = DispatchTime.now() + 1
+        DispatchQueue.main.asyncAfter(deadline: when) {
+            self.onNextPage?()
+        }
     }
     
     
