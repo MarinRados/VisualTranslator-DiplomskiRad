@@ -45,7 +45,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KGa-8d-A7u">
-                                <rect key="frame" x="86" y="418" width="203" height="30"/>
+                                <rect key="frame" x="70" y="418" width="235" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -60,11 +60,11 @@
                             <constraint firstItem="W7n-jl-n6l" firstAttribute="centerX" secondItem="LW1-IG-pUw" secondAttribute="centerX" id="O5s-om-1B2"/>
                             <constraint firstItem="Qkr-lY-rXP" firstAttribute="centerX" secondItem="LW1-IG-pUw" secondAttribute="centerX" id="cKN-Yk-9dl"/>
                             <constraint firstItem="KGa-8d-A7u" firstAttribute="top" secondItem="Qkr-lY-rXP" secondAttribute="bottom" constant="30" id="fhV-sS-8k2"/>
-                            <constraint firstItem="KGa-8d-A7u" firstAttribute="leading" secondItem="LW1-IG-pUw" secondAttribute="leadingMargin" constant="70" id="h4w-Br-7g7"/>
+                            <constraint firstItem="KGa-8d-A7u" firstAttribute="leading" secondItem="LW1-IG-pUw" secondAttribute="leading" constant="70" id="h4w-Br-7g7"/>
                             <constraint firstItem="zfg-lI-RuU" firstAttribute="leading" secondItem="LW1-IG-pUw" secondAttribute="leading" constant="60" id="hN8-GZ-Iu0"/>
                             <constraint firstItem="KGa-8d-A7u" firstAttribute="centerX" secondItem="LW1-IG-pUw" secondAttribute="centerX" id="oIp-BQ-lI0"/>
                             <constraint firstItem="leJ-VM-Ppw" firstAttribute="centerX" secondItem="LW1-IG-pUw" secondAttribute="centerX" id="oh9-Xg-ePX"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="KGa-8d-A7u" secondAttribute="trailing" constant="70" id="pib-mR-93X"/>
+                            <constraint firstAttribute="trailing" secondItem="KGa-8d-A7u" secondAttribute="trailing" constant="70" id="pib-mR-93X"/>
                             <constraint firstItem="zfg-lI-RuU" firstAttribute="top" secondItem="leJ-VM-Ppw" secondAttribute="bottom" constant="40" id="qrW-6x-dq2"/>
                             <constraint firstItem="1YP-pE-QXi" firstAttribute="top" secondItem="zfg-lI-RuU" secondAttribute="bottom" constant="88" id="zsi-PO-4ky"/>
                         </constraints>

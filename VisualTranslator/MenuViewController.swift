@@ -10,6 +10,7 @@ import UIKit
 
 final class MenuViewController: BaseViewController {
 
+    var viewModel: MenuViewModel!
     
     @IBOutlet weak var easyQuizWithPicturesButton: UIButton! {
         didSet {
@@ -43,7 +44,25 @@ final class MenuViewController: BaseViewController {
         }
     }
     
-    // MARK: - lifecycle
+    // MARK: - User interaction
+    
+    @IBAction func createEasyQuizWithPictures(_ sender: Any) {
+        viewModel.goToQuizWith(pictures: true, difficulty: .easy)
+    }
+    
+    @IBAction func createHardQuizWithPictures(_ sender: Any) {
+        viewModel.goToQuizWith(pictures: true, difficulty: .hard)
+    }
+    
+    @IBAction func createEasyQuizWithoutPictures(_ sender: Any) {
+        viewModel.goToQuizWith(pictures: false, difficulty: .easy)
+    }
+    
+    @IBAction func createHardQuizWithoutPictures(_ sender: Any) {
+        viewModel.goToQuizWith(pictures: false, difficulty: .hard)
+    }
+    
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -30,18 +30,30 @@
                                             <constraint firstAttribute="height" constant="60" id="agP-dN-LZa"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="createEasyQuizWithPictures:" destination="ZEO-A9-r1D" eventType="touchUpInside" id="GUy-Te-ceG"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B8a-Vy-IBY">
                                         <rect key="frame" x="0.0" y="80" width="315" height="60"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="createHardQuizWithPictures:" destination="ZEO-A9-r1D" eventType="touchUpInside" id="zWH-qf-gJJ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UmN-ej-ThP">
                                         <rect key="frame" x="0.0" y="160" width="315" height="60"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="createEasyQuizWithoutPictures:" destination="ZEO-A9-r1D" eventType="touchUpInside" id="Psv-6O-bd8"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1vd-Be-6De">
                                         <rect key="frame" x="0.0" y="240" width="315" height="60"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="createHardQuizWithoutPictures:" destination="ZEO-A9-r1D" eventType="touchUpInside" id="FUz-P2-OoX"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>

@@ -9,15 +9,33 @@
 import UIKit
 
 
-final class QuizCoordinator: Coordinator {
+final class QuizCoordinator: NavCoordinator, Coordinator {
     
     private var navigationController = BaseNavigationController()
     
     func start() -> UIViewController {
         let vc = MenuViewController.instance()
+        let viewModel = MenuViewModel()
+        vc.viewModel = viewModel
+        
+        vc.viewModel.onGoToQuiz = { [weak self] image, difficulty in
+            self?.showQuiz(withImage: image, difficulty: difficulty)
+        }
         
         navigationController.viewControllers = [vc]
         vc.navigationBarDisplayMode = .always
         return navigationController
+    }
+    
+    func showQuiz(withImage: Bool, difficulty: Difficulty) {
+        navigationController.pushViewController(createQuiz(withImage: withImage, difficulty: difficulty), animated: true)
+    }
+    
+    func createQuiz(withImage: Bool, difficulty: Difficulty) -> UIViewController {
+        let viewController = QuizPageViewController.instance()
+        let viewModel = QuizPageViewModel(pickedDifficulty: difficulty, withImage: withImage, persistenceService: serviceFactory.persistenceService)
+        
+        viewController.viewModel = viewModel
+        return viewController
     }
 }

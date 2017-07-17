@@ -1,23 +1,21 @@
 //
-//  QuizWithPicturesViewController.swift
+//  QuizWithoutPicturesViewController.swift
 //  VisualTranslator
 //
-//  Created by Marin Rados on 14/07/2017.
+//  Created by Marin Rados on 17/07/2017.
 //  Copyright © 2017 Marin Rados. All rights reserved.
 //
 
 import UIKit
 
-class QuizWithPicturesViewController: BaseViewController {
-    
+class QuizWithoutPicturesViewController: BaseViewController {
+
     var question: QuizQuestion!
     
     var isCorrect: Bool = false
     var correctAnswer: String = ""
     
     // MARK: - Outlets
-    
-    @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var wordLabel: UILabel!
     
@@ -38,14 +36,9 @@ class QuizWithPicturesViewController: BaseViewController {
         
         configure()
     }
-    
+
     func configure() {
         wordLabel.text = question.originalText
         correctAnswer = question.translatedText
-        if let data = question.image {
-            let image = UIImage(data: data)?.fixOrientation()
-            imageView.image = image
-            imageView.contentMode = .scaleAspectFit
-        }
     }
 }

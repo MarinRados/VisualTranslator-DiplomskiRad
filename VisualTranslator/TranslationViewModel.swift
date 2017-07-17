@@ -94,7 +94,7 @@ final class TranslationViewModel {
             
             realm.add(newItem)
             
-            print("U realmu: \(realm.objects(QuizQuestion))")
+            print("U realmu: \(realm.objects(QuizQuestion.self))")
         }
     }
 }
