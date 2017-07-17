@@ -44,20 +44,18 @@ final class QuizPageViewModel {
         
         let maxQuestionCount = min(10, allQuestions.count)
         
-        let randomIndices: [Int] = (1...maxQuestionCount).reduce([]) { (acc, i) in
-            
-            var randomNum: Int
-            
-            repeat {
-                randomNum = Int(arc4random_uniform(UInt32(allQuestions.count)))
-            } while acc.contains(randomNum)
-            
-            return acc + [randomNum]
-        }
-        
-        return allQuestions.enumerated()
-            .filter { (index, _) in
-                return randomIndices.contains(index)
+        return (1...maxQuestionCount)
+            .reduce([]) { (acc, i)-> [(index: Int, QuizQuestion)] in
+                
+                var randomNum: Int
+                
+                let indices = acc.map { $0.0 }
+                
+                repeat {
+                    randomNum = Int(arc4random_uniform(UInt32(allQuestions.count)))
+                } while indices.contains(randomNum)
+                
+                return acc + [(randomNum, allQuestions[randomNum])]
             }
             .map { $0.1 }
     }
