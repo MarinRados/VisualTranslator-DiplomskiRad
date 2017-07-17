@@ -11,7 +11,7 @@ import UIKit
 class QuizWithPicturesViewController: BaseViewController {
     
     var question: QuizQuestion!
-    
+    var onNextPage: (() -> Void)?
     var isCorrect: Bool = false
     var correctAnswer: String = ""
     
@@ -33,8 +33,15 @@ class QuizWithPicturesViewController: BaseViewController {
         }
     }
     
+    @IBAction func goToNextPage(_ sender: Any) {
+        onNextPage?()
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        automaticallyAdjustsScrollViewInsets = false
         
         configure()
     }

@@ -41,8 +41,14 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pz4-Ch-fKl">
-                                <rect key="frame" x="76" y="449.5" width="223" height="30"/>
+                                <rect key="frame" x="76" y="449.5" width="223" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="2ER-ja-rDd"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="goToNextPage:" destination="E6B-yr-Dma" eventType="touchUpInside" id="APr-Re-5m1"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

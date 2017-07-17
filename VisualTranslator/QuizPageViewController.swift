@@ -12,11 +12,12 @@ class QuizPageViewController: UIPageViewController {
 
     var viewModel: QuizPageViewModel!
     var questionViewControllers: [UIViewController] = []
+    var currentIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dataSource = self
+        automaticallyAdjustsScrollViewInsets = false
         
         prepareQuestions()
         
@@ -25,6 +26,7 @@ class QuizPageViewController: UIPageViewController {
                                direction: .forward,
                                animated: true,
                                completion: nil)
+            currentIndex += 1
         }
     }
     
@@ -37,40 +39,33 @@ class QuizPageViewController: UIPageViewController {
             for question in questions {
                 let vc = QuizWithPicturesViewController.instance()
                 vc.question = question
+                vc.onNextPage = { _ in
+                    self.goToNextQuestion()
+                }
                 questionViewControllers.append(vc)
             }
         } else {
             for question in questions {
                 let vc = QuizWithoutPicturesViewController.instance()
                 vc.question = question
+                vc.onNextPage = { _ in
+                    self.goToNextQuestion()
+                }
                 questionViewControllers.append(vc)
             }
         }
     }
-}
-
-extension QuizPageViewController: UIPageViewControllerDataSource {
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        
-        guard let viewControllerIndex = questionViewControllers.index(of: viewController) else {
-            return nil
-        }
-        
-        let nextIndex = viewControllerIndex + 1
-        let orderedViewControllersCount = questionViewControllers.count
-        
-        guard orderedViewControllersCount != nextIndex else {
-            return nil
-        }
-        
-        guard orderedViewControllersCount > nextIndex else {
-            return nil
-        }
-        
-        return questionViewControllers[nextIndex]
-    }
     
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        return nil
+    func goToNextQuestion() {
+        let vc = questionViewControllers[currentIndex]
+        setViewControllers([vc],
+                           direction: .forward,
+                           animated: true,
+                           completion: nil)
+        if currentIndex == questionViewControllers.count - 1 {
+            //do something
+        } else {
+            currentIndex += 1
+        }
     }
 }
