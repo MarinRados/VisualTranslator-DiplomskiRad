@@ -15,6 +15,8 @@ final class TranslationViewModel {
     
     var onTranslation: ((String) -> Void)?
     var onError: ((String) -> Void)?
+    var onStartedActivity: (() -> Void)?
+    var onEndedActivity: (() -> Void)?
     
     let image: Data?
     let defaultLanguage = Language(name: "English", abrv: "en")
@@ -40,6 +42,7 @@ final class TranslationViewModel {
     
     
     func getRecognition(onComplete: @escaping (([String])-> Void)) {
+        onStartedActivity?()
         let apiKey = "313aa2d25dafe93ac0264926740d7701c04603bb"
         let version = "2017-06-13"
         let visualRecognition = VisualRecognition(apiKey: apiKey, version: version)
@@ -62,12 +65,14 @@ final class TranslationViewModel {
             let recognitions = firstFour.map { $0.classification }
             
             DispatchQueue.main.async {
+                self.onEndedActivity?()
                 onComplete(recognitions)
             }
         }
     }
     
     func translate(_ word: String) {
+        onStartedActivity?()
         let username = "961cf80d-6688-4015-be8e-1dfd415687a1"
         let password = "uFYZg0WRBKpt"
         let languageTranslator = LanguageTranslator(username: username, password: password)
@@ -83,6 +88,7 @@ final class TranslationViewModel {
             guard let firstElement = translation.translations.first else { return }
             
             DispatchQueue.main.async {
+                self.onEndedActivity?()
                 self.onTranslation?(firstElement.translation)
             }
         }

@@ -11,6 +11,8 @@ import UIKit
 final class TranslationViewController: UIViewController {
     
     var currentOriginalText: String?
+    private var activityIndicator: UIActivityIndicatorView?
+    var spinnerRelativeOffsetY: CGFloat = 0.5
 
     // MARK: - Outlets
     
@@ -104,6 +106,26 @@ final class TranslationViewController: UIViewController {
         
         navigationItem.title = "Translation"
         
+        viewModel.onStartedActivity  = { [weak self] in
+            self?.showSpinner()
+            self?.saveButton.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+            self?.view.isUserInteractionEnabled = false
+        }
+        
+        viewModel.onEndedActivity = { [weak self] in
+            self?.stopSpinner()
+            self?.saveButton.backgroundColor = .black
+            self?.view.isUserInteractionEnabled = true
+        }
+        
+        viewModel.onTranslation = { [weak self] translation in
+            self?.translationLabel.text = translation
+        }
+        
+        viewModel.onError = { [weak self] error in
+            self?.showAlert(title: error)
+        }
+        
         viewModel.getRecognition { [weak self] recognitions in
             self?.firstChoiceButton.setTitle(recognitions[0], for: .normal)
             guard let firstButtonTitle = self?.firstChoiceButton.currentTitle else { return }
@@ -114,13 +136,7 @@ final class TranslationViewController: UIViewController {
             self?.fourthChoiceButton.setTitle(recognitions[3], for: .normal)
         }
         
-        viewModel.onTranslation = { [weak self] translation in
-            self?.translationLabel.text = translation
-        }
         
-        viewModel.onError = { [weak self] error in
-            self?.showAlert(title: error)
-        }
     }
 
     // MARK: - Utility
@@ -134,5 +150,35 @@ final class TranslationViewController: UIViewController {
         thirdChoiceButton.tintColor = .white
         fourthChoiceButton.backgroundColor = .black
         fourthChoiceButton.tintColor = .white
+    }
+    
+    func showSpinner() {
+        spinner.startAnimating()
+        view.bringSubview(toFront: spinner)
+    }
+    
+    func stopSpinner() {
+        guard activityIndicator != nil else { return }
+        spinner.stopAnimating()
+    }
+    
+    private var spinner: UIActivityIndicatorView {
+        if let spinner = activityIndicator {
+            return spinner
+        } else {
+            return createSpinnerIfNeeded()
+        }
+        
+    }
+    
+    private func createSpinnerIfNeeded() -> UIActivityIndicatorView {
+        guard activityIndicator == nil else { return activityIndicator!}
+        let spinner = UIActivityIndicatorView()
+        spinner.hidesWhenStopped = true
+        spinner.color = .gray
+        view.addSubview(spinner)
+        spinner.center = CGPoint(x: view.center.x, y: view.center.y * spinnerRelativeOffsetY * 2.0 )
+        activityIndicator = spinner
+        return spinner
     }
 }
