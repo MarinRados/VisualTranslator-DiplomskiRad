@@ -43,6 +43,8 @@ final class QuizPageViewModel {
             allQuestions = Array(realm.objects(QuizQuestion.self).filter("language.abrv == %@", language))
         }
         
+        print(allQuestions)
+        
         return (1...10)
             .reduce([]) { (acc, i)-> [(index: Int, QuizQuestion)] in
                 

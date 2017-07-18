@@ -8,12 +8,14 @@
 
 import UIKit
 
-class QuizWithPicturesViewController: BaseViewController {
+class QuizWithPicturesViewController: BaseViewController, UITextFieldDelegate {
     
     var question: QuizQuestion!
     var onNextPage: (() -> Void)?
     var isCorrect: Bool = false
     var correctAnswer: String = ""
+    let correctAnswerNotification: [String] = ["Correct!", "Great!", "Nice! Keep it up.", "Good job!", "Excellent!"]
+    let incorrectAnswerNotification: [String] = ["Incorrect!", "You can do it next time!", "Close, try again!", "Wrong answer!"]
     
     // MARK: - Outlets
     
@@ -38,12 +40,15 @@ class QuizWithPicturesViewController: BaseViewController {
     }
     
     @IBAction func goToNextPage(_ sender: Any) {
-        if textField.text == correctAnswer {
+        view.isUserInteractionEnabled = false
+        if textField.text?.lowercased() == correctAnswer.lowercased() {
             correctLabel.textColor = .green
-            correctLabel.text = "Correct!"
+            let randomIndex = Int(arc4random_uniform(UInt32(correctAnswerNotification.count)))
+            correctLabel.text = correctAnswerNotification[randomIndex]
         } else {
             correctLabel.textColor = .red
-            correctLabel.text = "Incorrect!"
+            let randomIndex = Int(arc4random_uniform(UInt32(incorrectAnswerNotification.count)))
+            correctLabel.text = incorrectAnswerNotification[randomIndex]
         }
         let when = DispatchTime.now() + 1
         DispatchQueue.main.asyncAfter(deadline: when) {
@@ -58,6 +63,8 @@ class QuizWithPicturesViewController: BaseViewController {
         automaticallyAdjustsScrollViewInsets = false
         
         configure()
+        
+        textField.delegate = self
     }
     
     func configure() {
@@ -68,5 +75,10 @@ class QuizWithPicturesViewController: BaseViewController {
             imageView.image = image
             imageView.contentMode = .scaleAspectFit
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
     }
 }
