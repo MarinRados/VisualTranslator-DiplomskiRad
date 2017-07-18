@@ -17,6 +17,8 @@ final class TranslationViewModel {
     var onError: ((String) -> Void)?
     var onStartedActivity: (() -> Void)?
     var onEndedActivity: (() -> Void)?
+    var onItemSaved: (() -> Void)?
+    var onFinished: (() -> Void)?
     
     let image: Data?
     let defaultLanguage = Language(name: "English", abrv: "en")
@@ -106,8 +108,11 @@ final class TranslationViewModel {
             newItem.image = image
             
             realm.add(newItem)
-            
-            print("U realmu: \(realm.objects(QuizQuestion.self))")
+        }
+        onItemSaved?()
+        let when = DispatchTime.now() + 1
+        DispatchQueue.main.asyncAfter(deadline: when) {
+            self.onFinished?()
         }
     }
 }

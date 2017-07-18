@@ -108,14 +108,14 @@ final class TranslationViewController: UIViewController {
         
         viewModel.onStartedActivity  = { [weak self] in
             self?.showSpinner()
-            self?.saveButton.backgroundColor = UIColor.black.withAlphaComponent(0.5)
             self?.view.isUserInteractionEnabled = false
+            self?.saveButton.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         }
         
         viewModel.onEndedActivity = { [weak self] in
             self?.stopSpinner()
-            self?.saveButton.backgroundColor = .black
             self?.view.isUserInteractionEnabled = true
+            self?.saveButton.backgroundColor = .black
         }
         
         viewModel.onTranslation = { [weak self] translation in
@@ -124,6 +124,14 @@ final class TranslationViewController: UIViewController {
         
         viewModel.onError = { [weak self] error in
             self?.showAlert(title: error)
+        }
+        
+        viewModel.onItemSaved = { [weak self] in
+            self?.view.isUserInteractionEnabled = false
+            UIView.animate(withDuration: 0.1, animations: {
+                self?.saveButton.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+                self?.saveButton.setTitle("SAVED!", for: .normal)
+            })
         }
         
         viewModel.getRecognition { [weak self] recognitions in
