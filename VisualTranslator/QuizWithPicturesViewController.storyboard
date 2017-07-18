@@ -31,7 +31,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zfg-lI-RuU">
-                                <rect key="frame" x="60" y="485" width="255" height="50"/>
+                                <rect key="frame" x="60" y="489" width="255" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="C89-1i-VuM"/>
                                 </constraints>
@@ -41,7 +41,10 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="leJ-VM-Ppw">
-                                <rect key="frame" x="166" y="434" width="42" height="21"/>
+                                <rect key="frame" x="166" y="434" width="42" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="0FP-8B-8Rd"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

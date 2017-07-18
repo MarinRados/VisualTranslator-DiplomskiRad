@@ -53,6 +53,7 @@
 		EAA0311E1F1CB8CA00C8381B /* QuizWithoutPicturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA0311D1F1CB8CA00C8381B /* QuizWithoutPicturesViewController.swift */; };
 		EAA031201F1CB8D900C8381B /* QuizWithoutPicturesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA0311F1F1CB8D900C8381B /* QuizWithoutPicturesViewModel.swift */; };
 		EAA031221F1CE54000C8381B /* RealmResults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA031211F1CE54000C8381B /* RealmResults+Extensions.swift */; };
+		EAA031241F1DFE8100C8381B /* UIAlertAction+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA031231F1DFE8100C8381B /* UIAlertAction+Extensions.swift */; };
 		EAEC6E341EEAE4FC00A0D76D /* LanguageTranslatorV2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAEC6E321EEAE4FC00A0D76D /* LanguageTranslatorV2.framework */; };
 		EAEC6E351EEAE4FC00A0D76D /* VisualRecognitionV3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAEC6E331EEAE4FC00A0D76D /* VisualRecognitionV3.framework */; };
 		EAEC6E371EEAE57300A0D76D /* RestKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAEC6E361EEAE57300A0D76D /* RestKit.framework */; };
@@ -132,6 +133,7 @@
 		EAA0311D1F1CB8CA00C8381B /* QuizWithoutPicturesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizWithoutPicturesViewController.swift; sourceTree = "<group>"; };
 		EAA0311F1F1CB8D900C8381B /* QuizWithoutPicturesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizWithoutPicturesViewModel.swift; sourceTree = "<group>"; };
 		EAA031211F1CE54000C8381B /* RealmResults+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RealmResults+Extensions.swift"; sourceTree = "<group>"; };
+		EAA031231F1DFE8100C8381B /* UIAlertAction+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertAction+Extensions.swift"; sourceTree = "<group>"; };
 		EAEC6E321EEAE4FC00A0D76D /* LanguageTranslatorV2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LanguageTranslatorV2.framework; path = Carthage/Build/iOS/LanguageTranslatorV2.framework; sourceTree = "<group>"; };
 		EAEC6E331EEAE4FC00A0D76D /* VisualRecognitionV3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VisualRecognitionV3.framework; path = Carthage/Build/iOS/VisualRecognitionV3.framework; sourceTree = "<group>"; };
 		EAEC6E361EEAE57300A0D76D /* RestKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RestKit.framework; path = Carthage/Build/iOS/RestKit.framework; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 				EA21D26D1EE6F96900184F58 /* UITabBarItem+Extensions.swift */,
 				EA7768021EE94461001323D8 /* UIIMage+Extensions.swift */,
 				EAA031211F1CE54000C8381B /* RealmResults+Extensions.swift */,
+				EAA031231F1DFE8100C8381B /* UIAlertAction+Extensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -479,6 +482,7 @@
 				EA7767F91EE81F53001323D8 /* BaseViewController.swift in Sources */,
 				EA7767E91EE7F940001323D8 /* BaseNavigationController.swift in Sources */,
 				EA7768011EE94033001323D8 /* ImagePickerViewController.swift in Sources */,
+				EAA031241F1DFE8100C8381B /* UIAlertAction+Extensions.swift in Sources */,
 				EA21D26C1EE6E5F200184F58 /* UIViewController+Extensions.swift in Sources */,
 				EAA031201F1CB8D900C8381B /* QuizWithoutPicturesViewModel.swift in Sources */,
 				EA28A18D1F162B6000B5184B /* ServiceFactory.swift in Sources */,

@@ -14,6 +14,7 @@ import RealmSwift
 final class TranslationViewModel {
     
     var onTranslation: ((String) -> Void)?
+    var onError: ((String) -> Void)?
     
     let image: Data?
     let defaultLanguage = Language(name: "English", abrv: "en")
@@ -50,6 +51,12 @@ final class TranslationViewModel {
             let firstClassifier = firstImage.classifiers.first else { return }
             
             let classes = firstClassifier.classes
+            
+            if classes.count < 4 {
+                self.onError?("Too few recognition results, please try to take another picture.")
+                return
+            }
+            
             let firstFour = classes.prefix(4)
             
             let recognitions = firstFour.map { $0.classification }

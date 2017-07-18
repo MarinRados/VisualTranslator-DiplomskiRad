@@ -15,7 +15,7 @@ final class QuizCoordinator: NavCoordinator, Coordinator {
     
     func start() -> UIViewController {
         let vc = MenuViewController.instance()
-        let viewModel = MenuViewModel()
+        let viewModel = MenuViewModel(persistenceService: serviceFactory.persistenceService)
         vc.viewModel = viewModel
         
         vc.viewModel.onGoToQuiz = { [weak self] image, difficulty in

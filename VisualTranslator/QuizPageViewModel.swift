@@ -33,18 +33,17 @@ final class QuizPageViewModel {
     
     func getQuestions(language: String, difficulty: Difficulty) -> [QuizQuestion] {
         
-        let allQuestions: Results<QuizQuestion>
+        let allQuestions: [QuizQuestion]
         
         switch difficulty {
         case .easy:
-            allQuestions = realm.objects(QuizQuestion.self).filter("language.abrv == %@", language)
+            let objects = Array(realm.objects(QuizQuestion.self).filter("language.abrv == %@", language))
+            allQuestions = objects.filter { $0.translatedText.characters.count < 8 }
         case .hard:
-            allQuestions = realm.objects(QuizQuestion.self).filter("language.abrv == %@", language)
+            allQuestions = Array(realm.objects(QuizQuestion.self).filter("language.abrv == %@", language))
         }
         
-        let maxQuestionCount = min(10, allQuestions.count)
-        
-        return (1...maxQuestionCount)
+        return (1...10)
             .reduce([]) { (acc, i)-> [(index: Int, QuizQuestion)] in
                 
                 var randomNum: Int
@@ -58,5 +57,5 @@ final class QuizPageViewModel {
                 return acc + [(randomNum, allQuestions[randomNum])]
             }
             .map { $0.1 }
-    }
+    } 
 }

@@ -29,7 +29,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RGw-5g-xha">
-                                <rect key="frame" x="166" y="388.5" width="42" height="21"/>
+                                <rect key="frame" x="166" y="388.5" width="42" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="RA2-Rz-dKg"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -41,7 +44,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pz4-Ch-fKl">
-                                <rect key="frame" x="76" y="449.5" width="223" height="50"/>
+                                <rect key="frame" x="76" y="453.5" width="223" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="2ER-ja-rDd"/>
                                 </constraints>

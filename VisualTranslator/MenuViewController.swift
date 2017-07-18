@@ -68,6 +68,10 @@ final class MenuViewController: BaseViewController {
         super.viewDidLoad()
         
         navigationItem.title = "Take a quiz"
+        
+        viewModel.onError = { [weak self] error in
+            self?.showAlert(title: error)
+        }
     }
 
 }

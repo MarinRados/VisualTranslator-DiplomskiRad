@@ -117,6 +117,10 @@ final class TranslationViewController: UIViewController {
         viewModel.onTranslation = { [weak self] translation in
             self?.translationLabel.text = translation
         }
+        
+        viewModel.onError = { [weak self] error in
+            self?.showAlert(title: error)
+        }
     }
 
     // MARK: - Utility
