@@ -65,6 +65,8 @@ class QuizWithPicturesViewController: BaseViewController, UITextFieldDelegate {
         configure()
         
         textField.delegate = self
+        
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
     }
     
     func configure() {

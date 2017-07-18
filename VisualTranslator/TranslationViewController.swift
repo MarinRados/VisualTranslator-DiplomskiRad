@@ -143,8 +143,6 @@ final class TranslationViewController: UIViewController {
             self?.thirdChoiceButton.setTitle(recognitions[2], for: .normal)
             self?.fourthChoiceButton.setTitle(recognitions[3], for: .normal)
         }
-        
-        
     }
 
     // MARK: - Utility
