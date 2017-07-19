@@ -28,6 +28,9 @@ final class CameraViewController: BaseViewController, ImagePickerControllerPrese
             changeLanguageButton.setTitle("Change language", for: .normal)
             changeLanguageButton.backgroundColor = .black
             changeLanguageButton.tintColor = .white
+            changeLanguageButton.layer.cornerRadius = 5
+            changeLanguageButton.layer.borderWidth = 1
+            changeLanguageButton.layer.borderColor = UIColor.clear.cgColor
         }
     }
     

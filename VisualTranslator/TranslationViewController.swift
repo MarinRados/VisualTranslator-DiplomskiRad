@@ -30,6 +30,9 @@ final class TranslationViewController: UIViewController {
         didSet {
             firstChoiceButton.backgroundColor = .gray
             firstChoiceButton.tintColor = .white
+            firstChoiceButton.layer.cornerRadius = 5
+            firstChoiceButton.layer.borderWidth = 1
+            firstChoiceButton.layer.borderColor = UIColor.clear.cgColor
         }
     }
     
@@ -37,6 +40,9 @@ final class TranslationViewController: UIViewController {
         didSet {
             secondChoiceButton.backgroundColor = .black
             secondChoiceButton.tintColor = .white
+            secondChoiceButton.layer.cornerRadius = 5
+            secondChoiceButton.layer.borderWidth = 1
+            secondChoiceButton.layer.borderColor = UIColor.clear.cgColor
         }
     }
     
@@ -45,6 +51,9 @@ final class TranslationViewController: UIViewController {
             thirdChoiceButton.setTitle("", for: .normal)
             thirdChoiceButton.backgroundColor = .black
             thirdChoiceButton.tintColor = .white
+            thirdChoiceButton.layer.cornerRadius = 5
+            thirdChoiceButton.layer.borderWidth = 1
+            thirdChoiceButton.layer.borderColor = UIColor.clear.cgColor
         }
     }
     
@@ -53,6 +62,9 @@ final class TranslationViewController: UIViewController {
             fourthChoiceButton.setTitle("", for: .normal)
             fourthChoiceButton.backgroundColor = .black
             fourthChoiceButton.tintColor = .white
+            fourthChoiceButton.layer.cornerRadius = 5
+            fourthChoiceButton.layer.borderWidth = 1
+            fourthChoiceButton.layer.borderColor = UIColor.clear.cgColor
         }
     }
     
@@ -70,6 +82,9 @@ final class TranslationViewController: UIViewController {
             saveButton.setTitle("Save", for: .normal)
             saveButton.backgroundColor = .black
             saveButton.tintColor = .white
+            saveButton.layer.cornerRadius = 5
+            saveButton.layer.borderWidth = 1
+            saveButton.layer.borderColor = UIColor.clear.cgColor
         }
     }
     

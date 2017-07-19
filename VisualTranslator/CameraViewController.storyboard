@@ -33,9 +33,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghv-IU-TeA">
-                                <rect key="frame" x="56" y="597" width="263" height="40"/>
+                                <rect key="frame" x="56" y="587" width="263" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="gOh-na-aCd"/>
+                                    <constraint firstAttribute="height" constant="50" id="gOh-na-aCd"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <connections>
@@ -43,7 +43,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i6X-wB-uHg">
-                                <rect key="frame" x="166.5" y="556" width="42" height="21"/>
+                                <rect key="frame" x="166.5" y="546" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

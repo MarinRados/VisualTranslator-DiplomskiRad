@@ -17,6 +17,9 @@ final class MenuViewController: BaseViewController {
             easyQuizWithPicturesButton.setTitle("Easy quiz with pictures", for: .normal)
             easyQuizWithPicturesButton.backgroundColor = .black
             easyQuizWithPicturesButton.tintColor = .white
+            easyQuizWithPicturesButton.layer.cornerRadius = 5
+            easyQuizWithPicturesButton.layer.borderWidth = 1
+            easyQuizWithPicturesButton.layer.borderColor = UIColor.clear.cgColor
         }
     }
     
@@ -25,6 +28,9 @@ final class MenuViewController: BaseViewController {
             hardQuizWithPicturesButton.setTitle("Hard quiz with pictures", for: .normal)
             hardQuizWithPicturesButton.backgroundColor = .black
             hardQuizWithPicturesButton.tintColor = .white
+            hardQuizWithPicturesButton.layer.cornerRadius = 5
+            hardQuizWithPicturesButton.layer.borderWidth = 1
+            hardQuizWithPicturesButton.layer.borderColor = UIColor.clear.cgColor
         }
     }
     
@@ -33,6 +39,9 @@ final class MenuViewController: BaseViewController {
             easyQuizWithoutPictures.setTitle("Easy quiz without pictures", for: .normal)
             easyQuizWithoutPictures.backgroundColor = .black
             easyQuizWithoutPictures.tintColor = .white
+            easyQuizWithoutPictures.layer.cornerRadius = 5
+            easyQuizWithoutPictures.layer.borderWidth = 1
+            easyQuizWithoutPictures.layer.borderColor = UIColor.clear.cgColor
         }
     }
     
@@ -41,6 +50,9 @@ final class MenuViewController: BaseViewController {
             hardQuizWithoutPicturesButton.setTitle("Hard quiz without pictures", for: .normal)
             hardQuizWithoutPicturesButton.backgroundColor = .black
             hardQuizWithoutPicturesButton.tintColor = .white
+            hardQuizWithoutPicturesButton.layer.cornerRadius = 5
+            hardQuizWithoutPicturesButton.layer.borderWidth = 1
+            hardQuizWithoutPicturesButton.layer.borderColor = UIColor.clear.cgColor
         }
     }
     

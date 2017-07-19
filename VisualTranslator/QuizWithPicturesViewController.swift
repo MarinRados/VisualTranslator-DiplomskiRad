@@ -15,7 +15,7 @@ class QuizWithPicturesViewController: BaseViewController, UITextFieldDelegate {
     var isCorrect: Bool = false
     var correctAnswer: String = ""
     let correctAnswerNotification: [String] = ["Correct!", "Great!", "Nice! Keep it up.", "Good job!", "Excellent!"]
-    let incorrectAnswerNotification: [String] = ["Incorrect!", "You can do it next time!", "Close, try again!", "Wrong answer!"]
+    let incorrectAnswerNotification: [String] = ["Incorrect!", "You can do it next time!", "Try again!", "Wrong answer!"]
     
     // MARK: - Outlets
     
@@ -31,11 +31,20 @@ class QuizWithPicturesViewController: BaseViewController, UITextFieldDelegate {
         }
     }
     
+    @IBOutlet weak var answerLabel: UILabel! {
+        didSet {
+            answerLabel.text = ""
+        }
+    }
+    
     @IBOutlet weak var nextButton: UIButton! {
         didSet {
             nextButton.setTitle("Next", for: .normal)
             nextButton.backgroundColor = .black
             nextButton.tintColor = .white
+            nextButton.layer.cornerRadius = 5
+            nextButton.layer.borderWidth = 1
+            nextButton.layer.borderColor = UIColor.clear.cgColor
         }
     }
     
@@ -49,8 +58,9 @@ class QuizWithPicturesViewController: BaseViewController, UITextFieldDelegate {
             correctLabel.textColor = .red
             let randomIndex = Int(arc4random_uniform(UInt32(incorrectAnswerNotification.count)))
             correctLabel.text = incorrectAnswerNotification[randomIndex]
+            answerLabel.text = "Correct answer was: \(correctAnswer)"
         }
-        let when = DispatchTime.now() + 1
+        let when = DispatchTime.now() + 1.2
         DispatchQueue.main.asyncAfter(deadline: when) {
             self.onNextPage?()
         }
