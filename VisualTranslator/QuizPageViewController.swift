@@ -57,14 +57,14 @@ class QuizPageViewController: UIPageViewController {
     }
     
     func goToNextQuestion() {
-        let vc = questionViewControllers[currentIndex]
-        setViewControllers([vc],
-                           direction: .forward,
-                           animated: true,
-                           completion: nil)
-        if currentIndex == questionViewControllers.count - 1 {
-            //do something
+        if currentIndex == questionViewControllers.count {
+            viewModel.goToScore()
         } else {
+            let vc = questionViewControllers[currentIndex]
+            setViewControllers([vc],
+                               direction: .forward,
+                               animated: true,
+                               completion: nil)
             currentIndex += 1
         }
     }

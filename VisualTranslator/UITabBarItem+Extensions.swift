@@ -12,4 +12,5 @@ extension UITabBarItem {
     
     static let vision = UITabBarItem(title: nil, image: #imageLiteral(resourceName: "ic_add_a_photo_white"), selectedImage: nil)
     static let quiz = UITabBarItem(title: nil, image: #imageLiteral(resourceName: "ic_extension_white"), selectedImage: nil)
+    static let info = UITabBarItem(title: nil, image: #imageLiteral(resourceName: "ic_info_white"), selectedImage: nil)
 }

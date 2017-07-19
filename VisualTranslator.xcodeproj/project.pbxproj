@@ -53,6 +53,12 @@
 		EAA0311E1F1CB8CA00C8381B /* QuizWithoutPicturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA0311D1F1CB8CA00C8381B /* QuizWithoutPicturesViewController.swift */; };
 		EAA031201F1CB8D900C8381B /* QuizWithoutPicturesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA0311F1F1CB8D900C8381B /* QuizWithoutPicturesViewModel.swift */; };
 		EAA031241F1DFE8100C8381B /* UIAlertAction+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA031231F1DFE8100C8381B /* UIAlertAction+Extensions.swift */; };
+		EAA0312E1F1F863000C8381B /* ScoreViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAA0312D1F1F863000C8381B /* ScoreViewController.storyboard */; };
+		EAA031301F1F863D00C8381B /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA0312F1F1F863D00C8381B /* ScoreViewController.swift */; };
+		EAA031321F1F864900C8381B /* ScoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA031311F1F864900C8381B /* ScoreViewModel.swift */; };
+		EAA031351F1F932800C8381B /* InfoCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA031341F1F932800C8381B /* InfoCoordinator.swift */; };
+		EAA031371F1F953600C8381B /* InfoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAA031361F1F953600C8381B /* InfoViewController.storyboard */; };
+		EAA031391F1F954300C8381B /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA031381F1F954300C8381B /* InfoViewController.swift */; };
 		EAEC6E341EEAE4FC00A0D76D /* LanguageTranslatorV2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAEC6E321EEAE4FC00A0D76D /* LanguageTranslatorV2.framework */; };
 		EAEC6E351EEAE4FC00A0D76D /* VisualRecognitionV3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAEC6E331EEAE4FC00A0D76D /* VisualRecognitionV3.framework */; };
 		EAEC6E371EEAE57300A0D76D /* RestKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAEC6E361EEAE57300A0D76D /* RestKit.framework */; };
@@ -132,6 +138,12 @@
 		EAA0311D1F1CB8CA00C8381B /* QuizWithoutPicturesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizWithoutPicturesViewController.swift; sourceTree = "<group>"; };
 		EAA0311F1F1CB8D900C8381B /* QuizWithoutPicturesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizWithoutPicturesViewModel.swift; sourceTree = "<group>"; };
 		EAA031231F1DFE8100C8381B /* UIAlertAction+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertAction+Extensions.swift"; sourceTree = "<group>"; };
+		EAA0312D1F1F863000C8381B /* ScoreViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ScoreViewController.storyboard; sourceTree = "<group>"; };
+		EAA0312F1F1F863D00C8381B /* ScoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
+		EAA031311F1F864900C8381B /* ScoreViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreViewModel.swift; sourceTree = "<group>"; };
+		EAA031341F1F932800C8381B /* InfoCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoCoordinator.swift; sourceTree = "<group>"; };
+		EAA031361F1F953600C8381B /* InfoViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = InfoViewController.storyboard; sourceTree = "<group>"; };
+		EAA031381F1F954300C8381B /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		EAEC6E321EEAE4FC00A0D76D /* LanguageTranslatorV2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LanguageTranslatorV2.framework; path = Carthage/Build/iOS/LanguageTranslatorV2.framework; sourceTree = "<group>"; };
 		EAEC6E331EEAE4FC00A0D76D /* VisualRecognitionV3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VisualRecognitionV3.framework; path = Carthage/Build/iOS/VisualRecognitionV3.framework; sourceTree = "<group>"; };
 		EAEC6E361EEAE57300A0D76D /* RestKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RestKit.framework; path = Carthage/Build/iOS/RestKit.framework; sourceTree = "<group>"; };
@@ -210,6 +222,7 @@
 				EA7767FF1EE94015001323D8 /* Common */,
 				EA7767F61EE80748001323D8 /* LaunchScreen.storyboard */,
 				EA21D2681EE6E4E900184F58 /* MainCoordinator.swift */,
+				EAA031331F1F930800C8381B /* Info */,
 				EA7767E41EE7F577001323D8 /* Vision */,
 				EA7767E51EE7F58C001323D8 /* Quiz */,
 			);
@@ -263,6 +276,7 @@
 				EAA0310F1F18C3C700C8381B /* QuizPager */,
 				EAA031031F18B2DA00C8381B /* QuizWithPictures */,
 				EAA0311A1F1CB89000C8381B /* QuizWithoutPictures */,
+				EAA0312C1F1F861100C8381B /* Score */,
 				EA7767F11EE7FC87001323D8 /* Menu */,
 			);
 			name = Quiz;
@@ -358,6 +372,26 @@
 			name = QuizWithoutPictures;
 			sourceTree = "<group>";
 		};
+		EAA0312C1F1F861100C8381B /* Score */ = {
+			isa = PBXGroup;
+			children = (
+				EAA0312D1F1F863000C8381B /* ScoreViewController.storyboard */,
+				EAA0312F1F1F863D00C8381B /* ScoreViewController.swift */,
+				EAA031311F1F864900C8381B /* ScoreViewModel.swift */,
+			);
+			name = Score;
+			sourceTree = "<group>";
+		};
+		EAA031331F1F930800C8381B /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				EAA031341F1F932800C8381B /* InfoCoordinator.swift */,
+				EAA031361F1F953600C8381B /* InfoViewController.storyboard */,
+				EAA031381F1F954300C8381B /* InfoViewController.swift */,
+			);
+			name = Info;
+			sourceTree = "<group>";
+		};
 		EAEC6E311EEAE4FC00A0D76D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -433,6 +467,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAA0312E1F1F863000C8381B /* ScoreViewController.storyboard in Resources */,
 				EA7767EE1EE7FA2D001323D8 /* CameraViewController.storyboard in Resources */,
 				EA7767F71EE80748001323D8 /* LaunchScreen.storyboard in Resources */,
 				EAA0311C1F1CB8B500C8381B /* QuizWithoutPicturesViewController.storyboard in Resources */,
@@ -440,6 +475,7 @@
 				EA21D2581EE6B59E00184F58 /* Assets.xcassets in Resources */,
 				EA7767F51EE7FCB7001323D8 /* MenuViewController.storyboard in Resources */,
 				EAA031051F18B30500C8381B /* QuizWithPicturesViewController.storyboard in Resources */,
+				EAA031371F1F953600C8381B /* InfoViewController.storyboard in Resources */,
 				EA9D61511EF16A7D00578DAB /* LanguageViewController.storyboard in Resources */,
 				EAA031111F18C3EF00C8381B /* QuizPageViewController.storyboard in Resources */,
 			);
@@ -477,6 +513,7 @@
 				EAA031191F1CB73D00C8381B /* MenuViewModel.swift in Sources */,
 				EA7767F31EE7FCA1001323D8 /* MenuViewController.swift in Sources */,
 				EA7767F91EE81F53001323D8 /* BaseViewController.swift in Sources */,
+				EAA031321F1F864900C8381B /* ScoreViewModel.swift in Sources */,
 				EA7767E91EE7F940001323D8 /* BaseNavigationController.swift in Sources */,
 				EA7768011EE94033001323D8 /* ImagePickerViewController.swift in Sources */,
 				EAA031241F1DFE8100C8381B /* UIAlertAction+Extensions.swift in Sources */,
@@ -484,12 +521,15 @@
 				EAA031201F1CB8D900C8381B /* QuizWithoutPicturesViewModel.swift in Sources */,
 				EA28A18D1F162B6000B5184B /* ServiceFactory.swift in Sources */,
 				EA77680C1EE94AE9001323D8 /* TranslationViewModel.swift in Sources */,
+				EAA031301F1F863D00C8381B /* ScoreViewController.swift in Sources */,
 				EA7768081EE946F8001323D8 /* TranslationViewController.swift in Sources */,
 				EA21D26E1EE6F96900184F58 /* UITabBarItem+Extensions.swift in Sources */,
 				EA21D2511EE6B59E00184F58 /* AppDelegate.swift in Sources */,
 				EA7767EB1EE7F9F4001323D8 /* CameraViewController.swift in Sources */,
 				EAA0311E1F1CB8CA00C8381B /* QuizWithoutPicturesViewController.swift in Sources */,
+				EAA031351F1F932800C8381B /* InfoCoordinator.swift in Sources */,
 				EA9D61591EF16E8D00578DAB /* LanguageCell.swift in Sources */,
+				EAA031391F1F954300C8381B /* InfoViewController.swift in Sources */,
 				EA28A18B1F16287800B5184B /* UserDefaults+PersistenceService.swift in Sources */,
 				EAA031071F18B32F00C8381B /* QuizWithPicturesViewController.swift in Sources */,
 				EA21D2691EE6E4E900184F58 /* MainCoordinator.swift in Sources */,

@@ -13,7 +13,8 @@ final class MainCoordinator: Coordinator {
     
     fileprivate var childCoordinators: [Coordinator] = [
         VisionCoordinator(),
-        QuizCoordinator()
+        QuizCoordinator(),
+        InfoCoordinator()
     ]
     
     @discardableResult
@@ -38,6 +39,8 @@ extension MainCoordinator {
             return .vision
         case is QuizCoordinator:
             return .quiz
+        case is InfoCoordinator:
+            return .info
         default:
             fatalError("No tab bar set for this coordinator!")
         }
