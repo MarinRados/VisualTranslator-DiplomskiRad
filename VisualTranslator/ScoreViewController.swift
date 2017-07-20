@@ -23,6 +23,29 @@ class ScoreViewController: BaseViewController {
         }
     }
     
+    @IBOutlet weak var infoLabel: UILabel! {
+        didSet {
+            infoLabel.textAlignment = .center
+        }
+    }
+    
+    @IBOutlet weak var scoreLabel: UILabel! {
+        didSet {
+            scoreLabel.textAlignment = .center
+        }
+    }
+    
+    @IBOutlet weak var modifierLabel: UILabel! {
+        didSet {
+            modifierLabel.textAlignment = .center
+        }
+    }
+    
+    @IBOutlet weak var totalScoreLabel: UILabel! {
+        didSet {
+            totalScoreLabel.textAlignment = .center
+        }
+    }
     
     @IBAction func goBackToMenu(_ sender: Any) {
         viewModel.goToMenu()
@@ -34,5 +57,16 @@ class ScoreViewController: BaseViewController {
         navigationItem.title = "Score"
         
         navigationItem.setHidesBackButton(true, animated:true)
+        
+        viewModel.getTotalPoints()
+        
+        configure()
+    }
+    
+    func configure() {
+        infoLabel.text = "Your score was:"
+        scoreLabel.text = "\(viewModel.points)/10"
+        modifierLabel.text = "\(viewModel.modifier)"
+        totalScoreLabel.text = "Total score so far: \(viewModel.persistenceService.totalScore)"
     }
 }

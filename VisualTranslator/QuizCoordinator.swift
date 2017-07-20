@@ -36,20 +36,20 @@ final class QuizCoordinator: NavCoordinator, Coordinator {
         let viewModel = QuizPageViewModel(pickedDifficulty: difficulty, withImage: withImage, persistenceService: serviceFactory.persistenceService)
         viewController.viewModel = viewModel
         
-        viewController.viewModel.onGoToScore = { [weak self] in
-            self?.showScore()
+        viewController.viewModel.onGoToScore = { [weak self] points, image, difficulty in
+            self?.showScore(points: points, image: image, difficulty: difficulty)
         }
         
         return viewController
     }
     
-    func showScore() {
-        navigationController.pushViewController(createScore(), animated: true)
+    func showScore(points: Int, image: Bool, difficulty: Difficulty) {
+        navigationController.pushViewController(createScore(points: points, image: image, difficulty: difficulty), animated: true)
     }
     
-    func createScore() -> UIViewController {
+    func createScore(points: Int, image: Bool, difficulty: Difficulty) -> UIViewController {
         let viewController = ScoreViewController.instance()
-        let viewModel = ScoreViewModel()
+        let viewModel = ScoreViewModel(points: points, withImage: image, difficulty: difficulty, persistenceService: serviceFactory.persistenceService)
         viewController.viewModel = viewModel
         
         viewController.viewModel.onGoToMenu = { [weak self] in

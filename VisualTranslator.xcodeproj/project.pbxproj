@@ -44,14 +44,12 @@
 		EA9D61591EF16E8D00578DAB /* LanguageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9D61581EF16E8D00578DAB /* LanguageCell.swift */; };
 		EAA031051F18B30500C8381B /* QuizWithPicturesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAA031041F18B30500C8381B /* QuizWithPicturesViewController.storyboard */; };
 		EAA031071F18B32F00C8381B /* QuizWithPicturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA031061F18B32F00C8381B /* QuizWithPicturesViewController.swift */; };
-		EAA031091F18B33F00C8381B /* QuizWithPicturesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA031081F18B33F00C8381B /* QuizWithPicturesViewModel.swift */; };
 		EAA031111F18C3EF00C8381B /* QuizPageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAA031101F18C3EF00C8381B /* QuizPageViewController.storyboard */; };
 		EAA031131F18C40200C8381B /* QuizPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA031121F18C40200C8381B /* QuizPageViewController.swift */; };
 		EAA031151F18C42700C8381B /* QuizPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA031141F18C42700C8381B /* QuizPageViewModel.swift */; };
 		EAA031191F1CB73D00C8381B /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA031181F1CB73D00C8381B /* MenuViewModel.swift */; };
 		EAA0311C1F1CB8B500C8381B /* QuizWithoutPicturesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAA0311B1F1CB8B500C8381B /* QuizWithoutPicturesViewController.storyboard */; };
 		EAA0311E1F1CB8CA00C8381B /* QuizWithoutPicturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA0311D1F1CB8CA00C8381B /* QuizWithoutPicturesViewController.swift */; };
-		EAA031201F1CB8D900C8381B /* QuizWithoutPicturesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA0311F1F1CB8D900C8381B /* QuizWithoutPicturesViewModel.swift */; };
 		EAA031241F1DFE8100C8381B /* UIAlertAction+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA031231F1DFE8100C8381B /* UIAlertAction+Extensions.swift */; };
 		EAA0312E1F1F863000C8381B /* ScoreViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAA0312D1F1F863000C8381B /* ScoreViewController.storyboard */; };
 		EAA031301F1F863D00C8381B /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA0312F1F1F863D00C8381B /* ScoreViewController.swift */; };
@@ -129,14 +127,12 @@
 		EA9D61581EF16E8D00578DAB /* LanguageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageCell.swift; sourceTree = "<group>"; };
 		EAA031041F18B30500C8381B /* QuizWithPicturesViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = QuizWithPicturesViewController.storyboard; sourceTree = "<group>"; };
 		EAA031061F18B32F00C8381B /* QuizWithPicturesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizWithPicturesViewController.swift; sourceTree = "<group>"; };
-		EAA031081F18B33F00C8381B /* QuizWithPicturesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizWithPicturesViewModel.swift; sourceTree = "<group>"; };
 		EAA031101F18C3EF00C8381B /* QuizPageViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = QuizPageViewController.storyboard; sourceTree = "<group>"; };
 		EAA031121F18C40200C8381B /* QuizPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizPageViewController.swift; sourceTree = "<group>"; };
 		EAA031141F18C42700C8381B /* QuizPageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizPageViewModel.swift; sourceTree = "<group>"; };
 		EAA031181F1CB73D00C8381B /* MenuViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 		EAA0311B1F1CB8B500C8381B /* QuizWithoutPicturesViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = QuizWithoutPicturesViewController.storyboard; sourceTree = "<group>"; };
 		EAA0311D1F1CB8CA00C8381B /* QuizWithoutPicturesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizWithoutPicturesViewController.swift; sourceTree = "<group>"; };
-		EAA0311F1F1CB8D900C8381B /* QuizWithoutPicturesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizWithoutPicturesViewModel.swift; sourceTree = "<group>"; };
 		EAA031231F1DFE8100C8381B /* UIAlertAction+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertAction+Extensions.swift"; sourceTree = "<group>"; };
 		EAA0312D1F1F863000C8381B /* ScoreViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ScoreViewController.storyboard; sourceTree = "<group>"; };
 		EAA0312F1F1F863D00C8381B /* ScoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
@@ -347,7 +343,6 @@
 			children = (
 				EAA031041F18B30500C8381B /* QuizWithPicturesViewController.storyboard */,
 				EAA031061F18B32F00C8381B /* QuizWithPicturesViewController.swift */,
-				EAA031081F18B33F00C8381B /* QuizWithPicturesViewModel.swift */,
 			);
 			name = QuizWithPictures;
 			sourceTree = "<group>";
@@ -367,7 +362,6 @@
 			children = (
 				EAA0311B1F1CB8B500C8381B /* QuizWithoutPicturesViewController.storyboard */,
 				EAA0311D1F1CB8CA00C8381B /* QuizWithoutPicturesViewController.swift */,
-				EAA0311F1F1CB8D900C8381B /* QuizWithoutPicturesViewModel.swift */,
 			);
 			name = QuizWithoutPictures;
 			sourceTree = "<group>";
@@ -518,7 +512,6 @@
 				EA7768011EE94033001323D8 /* ImagePickerViewController.swift in Sources */,
 				EAA031241F1DFE8100C8381B /* UIAlertAction+Extensions.swift in Sources */,
 				EA21D26C1EE6E5F200184F58 /* UIViewController+Extensions.swift in Sources */,
-				EAA031201F1CB8D900C8381B /* QuizWithoutPicturesViewModel.swift in Sources */,
 				EA28A18D1F162B6000B5184B /* ServiceFactory.swift in Sources */,
 				EA77680C1EE94AE9001323D8 /* TranslationViewModel.swift in Sources */,
 				EAA031301F1F863D00C8381B /* ScoreViewController.swift in Sources */,
@@ -536,7 +529,6 @@
 				EA7767F01EE7FC66001323D8 /* QuizCoordinator.swift in Sources */,
 				EA11D1AD1F151519000F6B1B /* LanguageViewModel.swift in Sources */,
 				EAA031131F18C40200C8381B /* QuizPageViewController.swift in Sources */,
-				EAA031091F18B33F00C8381B /* QuizWithPicturesViewModel.swift in Sources */,
 				EA21D2661EE6D77200184F58 /* BaseCoordinator.swift in Sources */,
 				EA77680A1EE94AD3001323D8 /* CameraViewModel.swift in Sources */,
 				EAA031151F18C42700C8381B /* QuizPageViewModel.swift in Sources */,

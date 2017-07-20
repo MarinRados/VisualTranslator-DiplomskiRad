@@ -11,9 +11,10 @@ import UIKit
 class QuizWithPicturesViewController: BaseViewController, UITextFieldDelegate {
     
     var question: QuizQuestion!
-    var onNextPage: (() -> Void)?
+    var onNextPage: ((Bool) -> Void)?
     var isCorrect: Bool = false
     var correctAnswer: String = ""
+    var delay = DispatchTime.now()
     let correctAnswerNotification: [String] = ["Correct!", "Great!", "Nice! Keep it up.", "Good job!", "Excellent!"]
     let incorrectAnswerNotification: [String] = ["Incorrect!", "You can do it next time!", "Try again!", "Wrong answer!"]
     
@@ -51,18 +52,21 @@ class QuizWithPicturesViewController: BaseViewController, UITextFieldDelegate {
     @IBAction func goToNextPage(_ sender: Any) {
         view.isUserInteractionEnabled = false
         if textField.text?.lowercased() == correctAnswer.lowercased() {
+            isCorrect = true
             correctLabel.textColor = .green
             let randomIndex = Int(arc4random_uniform(UInt32(correctAnswerNotification.count)))
             correctLabel.text = correctAnswerNotification[randomIndex]
+            delay = DispatchTime.now() + 1
         } else {
+            isCorrect = false
             correctLabel.textColor = .red
             let randomIndex = Int(arc4random_uniform(UInt32(incorrectAnswerNotification.count)))
             correctLabel.text = incorrectAnswerNotification[randomIndex]
             answerLabel.text = "Correct answer was: \(correctAnswer)"
+            delay = DispatchTime.now() + 1.5
         }
-        let when = DispatchTime.now() + 1.2
-        DispatchQueue.main.asyncAfter(deadline: when) {
-            self.onNextPage?()
+        DispatchQueue.main.asyncAfter(deadline: delay) {
+            self.onNextPage?(self.isCorrect)
         }
     }
     

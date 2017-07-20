@@ -21,7 +21,7 @@ final class QuizPageViewModel {
     var withImage: Bool!
     var persistenceService: PersistenceServiceProtocol
     
-    var onGoToScore: (() -> Void)?
+    var onGoToScore: ((Int, Bool, Difficulty) -> Void)?
     
     var language: String {
         return persistenceService.currentLanguage?.abrv ?? "de"
@@ -63,7 +63,7 @@ final class QuizPageViewModel {
             .map { $0.1 }
     }
     
-    func goToScore() {
-        onGoToScore?()
+    func goToScore(points: Int, image: Bool, difficulty: Difficulty) {
+        onGoToScore?(points, image, difficulty)
     }
 }

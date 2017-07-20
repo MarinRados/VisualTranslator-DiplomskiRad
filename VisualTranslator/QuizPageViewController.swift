@@ -13,6 +13,7 @@ class QuizPageViewController: UIPageViewController {
     var viewModel: QuizPageViewModel!
     var questionViewControllers: [UIViewController] = []
     var currentIndex = 0
+    var points = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,7 @@ class QuizPageViewController: UIPageViewController {
         prepareQuestions()
         
         if let firstVC = questionViewControllers.first {
+            self.navigationItem.title = "\(currentIndex + 1)/10"
             setViewControllers([firstVC],
                                direction: .forward,
                                animated: true,
@@ -33,14 +35,12 @@ class QuizPageViewController: UIPageViewController {
     func prepareQuestions() {
         let questions = viewModel.getQuestions(language: viewModel.language, difficulty: viewModel.pickedDifficulty)
         
-        print(questions)
-        
         if viewModel.withImage {
             for question in questions {
                 let vc = QuizWithPicturesViewController.instance()
                 vc.question = question
-                vc.onNextPage = { _ in
-                    self.goToNextQuestion()
+                vc.onNextPage = { isCorrect in
+                    self.goToNextQuestion(isCorrect)
                 }
                 questionViewControllers.append(vc)
             }
@@ -48,18 +48,22 @@ class QuizPageViewController: UIPageViewController {
             for question in questions {
                 let vc = QuizWithoutPicturesViewController.instance()
                 vc.question = question
-                vc.onNextPage = { _ in
-                    self.goToNextQuestion()
+                vc.onNextPage = { isCorrect in
+                    self.goToNextQuestion(isCorrect)
                 }
                 questionViewControllers.append(vc)
             }
         }
     }
     
-    func goToNextQuestion() {
+    func goToNextQuestion(_ isCorrect: Bool) {
+        if isCorrect {
+            points += 1
+        }
         if currentIndex == questionViewControllers.count {
-            viewModel.goToScore()
+            viewModel.goToScore(points: points, image: viewModel.withImage, difficulty: viewModel.pickedDifficulty)
         } else {
+            self.navigationItem.title = "\(currentIndex + 1)/10"
             let vc = questionViewControllers[currentIndex]
             setViewControllers([vc],
                                direction: .forward,

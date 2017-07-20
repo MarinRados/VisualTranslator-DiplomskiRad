@@ -11,6 +11,7 @@ import Foundation
 
 protocol PersistenceServiceProtocol {
     var currentLanguage: Language? { get set }
+    var totalScore: Int { get set }
 }
 
 private extension Language {
@@ -45,6 +46,14 @@ extension UserDefaults: PersistenceServiceProtocol {
             }
         } set {
             set(newValue?.asDictionary, forKey: "currentLanguage")
+        }
+    }
+    
+    var totalScore: Int {
+        get {
+            return integer(forKey: "totalScore")
+        } set {
+            set(newValue, forKey: "totalScore")
         }
     }
 }
