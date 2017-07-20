@@ -142,7 +142,7 @@ final class TranslationViewController: UIViewController {
         viewModel.onItemSaved = { [weak self] in
             self?.view.isUserInteractionEnabled = false
             UIView.animate(withDuration: 0.1, animations: {
-                self?.saveButton.backgroundColor = UIColor.darkBlue.withAlphaComponent(0.5)
+                self?.saveButton.backgroundColor = UIColor.grayBlue.withAlphaComponent(0.5)
                 self?.saveButton.setTitle("SAVED!", for: .normal)
             })
         }

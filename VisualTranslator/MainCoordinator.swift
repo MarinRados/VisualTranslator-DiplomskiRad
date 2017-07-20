@@ -56,6 +56,9 @@ extension MainCoordinator {
             return vc
         }
         
+        tabBarController.tabBar.unselectedItemTintColor = UIColor.darkBlue.withAlphaComponent(0.5)
+        tabBarController.tabBar.tintColor = .darkBlue
+        
         tabBarController.viewControllers = viewControllers
         
         return tabBarController
