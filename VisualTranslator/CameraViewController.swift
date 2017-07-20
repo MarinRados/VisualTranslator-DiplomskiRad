@@ -15,7 +15,7 @@ final class CameraViewController: BaseViewController, ImagePickerControllerPrese
     @IBOutlet weak var cameraButton: UIButton! {
         didSet {
             cameraButton.tintColor = .white
-            cameraButton.backgroundColor = .lightGray
+            cameraButton.backgroundColor = .grayish
             cameraButton.frame = CGRect(x: 100, y: 100, width: 100, height: 100)
             cameraButton.layer.cornerRadius = 0.5 * cameraButton.bounds.size.width
             cameraButton.clipsToBounds = true
@@ -26,7 +26,7 @@ final class CameraViewController: BaseViewController, ImagePickerControllerPrese
     @IBOutlet weak var changeLanguageButton: UIButton! {
         didSet {
             changeLanguageButton.setTitle("Change language", for: .normal)
-            changeLanguageButton.backgroundColor = .black
+            changeLanguageButton.backgroundColor = .grayBlue
             changeLanguageButton.tintColor = .white
             changeLanguageButton.layer.cornerRadius = 5
             changeLanguageButton.layer.borderWidth = 1

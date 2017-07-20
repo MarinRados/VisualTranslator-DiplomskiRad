@@ -13,6 +13,8 @@ final class TranslationViewController: UIViewController {
     var currentOriginalText: String?
     private var activityIndicator: UIActivityIndicatorView?
     var spinnerRelativeOffsetY: CGFloat = 0.5
+    
+    var viewModel: TranslationViewModel!
 
     // MARK: - Outlets
     
@@ -28,7 +30,7 @@ final class TranslationViewController: UIViewController {
     
     @IBOutlet weak var firstChoiceButton: UIButton! {
         didSet {
-            firstChoiceButton.backgroundColor = .gray
+            firstChoiceButton.backgroundColor = .darkGrey
             firstChoiceButton.tintColor = .white
             firstChoiceButton.layer.cornerRadius = 5
             firstChoiceButton.layer.borderWidth = 1
@@ -38,7 +40,7 @@ final class TranslationViewController: UIViewController {
     
     @IBOutlet weak var secondChoiceButton: UIButton! {
         didSet {
-            secondChoiceButton.backgroundColor = .black
+            secondChoiceButton.backgroundColor = .grayBlue
             secondChoiceButton.tintColor = .white
             secondChoiceButton.layer.cornerRadius = 5
             secondChoiceButton.layer.borderWidth = 1
@@ -49,7 +51,7 @@ final class TranslationViewController: UIViewController {
     @IBOutlet weak var thirdChoiceButton: UIButton! {
         didSet {
             thirdChoiceButton.setTitle("", for: .normal)
-            thirdChoiceButton.backgroundColor = .black
+            thirdChoiceButton.backgroundColor = .grayBlue
             thirdChoiceButton.tintColor = .white
             thirdChoiceButton.layer.cornerRadius = 5
             thirdChoiceButton.layer.borderWidth = 1
@@ -60,7 +62,7 @@ final class TranslationViewController: UIViewController {
     @IBOutlet weak var fourthChoiceButton: UIButton! {
         didSet {
             fourthChoiceButton.setTitle("", for: .normal)
-            fourthChoiceButton.backgroundColor = .black
+            fourthChoiceButton.backgroundColor = .grayBlue
             fourthChoiceButton.tintColor = .white
             fourthChoiceButton.layer.cornerRadius = 5
             fourthChoiceButton.layer.borderWidth = 1
@@ -80,18 +82,14 @@ final class TranslationViewController: UIViewController {
     @IBOutlet weak var saveButton: UIButton! {
         didSet {
             saveButton.setTitle("Save", for: .normal)
-            saveButton.backgroundColor = .black
+            saveButton.backgroundColor = .grayBlue
             saveButton.tintColor = .white
             saveButton.layer.cornerRadius = 5
             saveButton.layer.borderWidth = 1
             saveButton.layer.borderColor = UIColor.clear.cgColor
         }
     }
-    
-    // MARK: - Dependencies
-    
-    var viewModel: TranslationViewModel!
-    
+
     // MARK: - User Interaction
     
     @IBAction func changeTranslation(_ sender: UIButton) {
@@ -108,7 +106,7 @@ final class TranslationViewController: UIViewController {
     
     @IBAction func translationButtonTapped(_ sender: UIButton) {
         resetAllButtons()
-        sender.backgroundColor = .gray
+        sender.backgroundColor = .darkGrey
         sender.tintColor = .white
         currentOriginalText = sender.currentTitle
     }
@@ -124,13 +122,13 @@ final class TranslationViewController: UIViewController {
         viewModel.onStartedActivity  = { [weak self] in
             self?.showSpinner()
             self?.view.isUserInteractionEnabled = false
-            self?.saveButton.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+            self?.saveButton.backgroundColor = UIColor.grayBlue.withAlphaComponent(0.5)
         }
         
         viewModel.onEndedActivity = { [weak self] in
             self?.stopSpinner()
             self?.view.isUserInteractionEnabled = true
-            self?.saveButton.backgroundColor = .black
+            self?.saveButton.backgroundColor = .grayBlue
         }
         
         viewModel.onTranslation = { [weak self] translation in
@@ -144,7 +142,7 @@ final class TranslationViewController: UIViewController {
         viewModel.onItemSaved = { [weak self] in
             self?.view.isUserInteractionEnabled = false
             UIView.animate(withDuration: 0.1, animations: {
-                self?.saveButton.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+                self?.saveButton.backgroundColor = UIColor.darkBlue.withAlphaComponent(0.5)
                 self?.saveButton.setTitle("SAVED!", for: .normal)
             })
         }
@@ -163,13 +161,13 @@ final class TranslationViewController: UIViewController {
     // MARK: - Utility
     
     private func resetAllButtons() {
-        firstChoiceButton.backgroundColor = .black
+        firstChoiceButton.backgroundColor = .grayBlue
         firstChoiceButton.tintColor = .white
-        secondChoiceButton.backgroundColor = .black
+        secondChoiceButton.backgroundColor = .grayBlue
         secondChoiceButton.tintColor = .white
-        thirdChoiceButton.backgroundColor = .black
+        thirdChoiceButton.backgroundColor = .grayBlue
         thirdChoiceButton.tintColor = .white
-        fourthChoiceButton.backgroundColor = .black
+        fourthChoiceButton.backgroundColor = .grayBlue
         fourthChoiceButton.tintColor = .white
     }
     
@@ -196,7 +194,7 @@ final class TranslationViewController: UIViewController {
         guard activityIndicator == nil else { return activityIndicator!}
         let spinner = UIActivityIndicatorView()
         spinner.hidesWhenStopped = true
-        spinner.color = .gray
+        spinner.color = .grayish
         view.addSubview(spinner)
         spinner.center = CGPoint(x: view.center.x, y: view.center.y * spinnerRelativeOffsetY * 2.0 )
         activityIndicator = spinner

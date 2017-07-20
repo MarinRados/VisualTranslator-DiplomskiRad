@@ -25,9 +25,9 @@ final class LanguageViewController: BaseViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        tableView.separatorColor = .lightGray
+        tableView.separatorColor = .grayish
         tableView.tableFooterView = UIView.init(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 1))
-        tableView.tableFooterView?.backgroundColor = .lightGray
+        tableView.tableFooterView?.backgroundColor = .grayish
         
         style()
     }
@@ -38,6 +38,8 @@ final class LanguageViewController: BaseViewController {
     private func dismissTapped() {
         viewModel.cancel()
     }
+    
+    // MARK: - Utility
     
     func style() {
         tableView.backgroundColor = .white

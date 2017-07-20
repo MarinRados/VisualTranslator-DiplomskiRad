@@ -15,7 +15,7 @@ final class MenuViewController: BaseViewController {
     @IBOutlet weak var easyQuizWithPicturesButton: UIButton! {
         didSet {
             easyQuizWithPicturesButton.setTitle("Easy quiz with pictures", for: .normal)
-            easyQuizWithPicturesButton.backgroundColor = .black
+            easyQuizWithPicturesButton.backgroundColor = .grayBlue
             easyQuizWithPicturesButton.tintColor = .white
             easyQuizWithPicturesButton.layer.cornerRadius = 5
             easyQuizWithPicturesButton.layer.borderWidth = 1
@@ -26,7 +26,7 @@ final class MenuViewController: BaseViewController {
     @IBOutlet weak var hardQuizWithPicturesButton: UIButton! {
         didSet {
             hardQuizWithPicturesButton.setTitle("Hard quiz with pictures", for: .normal)
-            hardQuizWithPicturesButton.backgroundColor = .black
+            hardQuizWithPicturesButton.backgroundColor = .grayBlue
             hardQuizWithPicturesButton.tintColor = .white
             hardQuizWithPicturesButton.layer.cornerRadius = 5
             hardQuizWithPicturesButton.layer.borderWidth = 1
@@ -37,7 +37,7 @@ final class MenuViewController: BaseViewController {
     @IBOutlet weak var easyQuizWithoutPictures: UIButton! {
         didSet {
             easyQuizWithoutPictures.setTitle("Easy quiz without pictures", for: .normal)
-            easyQuizWithoutPictures.backgroundColor = .black
+            easyQuizWithoutPictures.backgroundColor = .grayBlue
             easyQuizWithoutPictures.tintColor = .white
             easyQuizWithoutPictures.layer.cornerRadius = 5
             easyQuizWithoutPictures.layer.borderWidth = 1
@@ -48,7 +48,7 @@ final class MenuViewController: BaseViewController {
     @IBOutlet weak var hardQuizWithoutPicturesButton: UIButton!{
         didSet {
             hardQuizWithoutPicturesButton.setTitle("Hard quiz without pictures", for: .normal)
-            hardQuizWithoutPicturesButton.backgroundColor = .black
+            hardQuizWithoutPicturesButton.backgroundColor = .grayBlue
             hardQuizWithoutPicturesButton.tintColor = .white
             hardQuizWithoutPicturesButton.layer.cornerRadius = 5
             hardQuizWithoutPicturesButton.layer.borderWidth = 1

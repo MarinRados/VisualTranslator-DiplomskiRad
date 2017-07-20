@@ -39,7 +39,7 @@ class QuizWithoutPicturesViewController: BaseViewController, UITextFieldDelegate
     @IBOutlet weak var nextButton: UIButton! {
         didSet {
             nextButton.setTitle("Next", for: .normal)
-            nextButton.backgroundColor = .black
+            nextButton.backgroundColor = .grayBlue
             nextButton.tintColor = .white
             nextButton.layer.cornerRadius = 5
             nextButton.layer.borderWidth = 1
@@ -47,17 +47,19 @@ class QuizWithoutPicturesViewController: BaseViewController, UITextFieldDelegate
         }
     }
     
+    // MARK: - User interaction
+    
     @IBAction func goToNextPage(_ sender: Any) {
         view.isUserInteractionEnabled = false
         if textField.text?.lowercased() == correctAnswer.lowercased() {
             isCorrect = true
-            correctLabel.textColor = .green
+            correctLabel.textColor = .cyan
             let randomIndex = Int(arc4random_uniform(UInt32(correctAnswerNotification.count)))
             correctLabel.text = correctAnswerNotification[randomIndex]
             delay = DispatchTime.now() + 1
         } else {
             isCorrect = false
-            correctLabel.textColor = .red
+            correctLabel.textColor = .darkRed
             let randomIndex = Int(arc4random_uniform(UInt32(incorrectAnswerNotification.count)))
             correctLabel.text = incorrectAnswerNotification[randomIndex]
             answerLabel.text = "Correct answer was: \(correctAnswer)"
@@ -68,6 +70,7 @@ class QuizWithoutPicturesViewController: BaseViewController, UITextFieldDelegate
         }
     }
     
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,6 +84,8 @@ class QuizWithoutPicturesViewController: BaseViewController, UITextFieldDelegate
         navigationController?.interactivePopGestureRecognizer?.isEnabled = false
     }
 
+    // MARK: - Utility
+    
     func configure() {
         wordLabel.text = question.originalText
         correctAnswer = question.translatedText

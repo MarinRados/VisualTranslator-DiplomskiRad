@@ -12,10 +12,12 @@ class ScoreViewController: BaseViewController {
 
     var viewModel: ScoreViewModel!
     
+    // MARK: - Outlets
+    
     @IBOutlet weak var menuButton: UIButton! {
         didSet {
             menuButton.setTitle("Done", for: .normal)
-            menuButton.backgroundColor = .black
+            menuButton.backgroundColor = .grayBlue
             menuButton.tintColor = .white
             menuButton.layer.cornerRadius = 5
             menuButton.layer.borderWidth = 1
@@ -51,6 +53,8 @@ class ScoreViewController: BaseViewController {
         viewModel.goToMenu()
     }
     
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -62,6 +66,8 @@ class ScoreViewController: BaseViewController {
         
         configure()
     }
+    
+    // MARK: - Utility
     
     func configure() {
         infoLabel.text = "Your score was:"
