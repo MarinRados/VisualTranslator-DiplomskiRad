@@ -40,6 +40,30 @@ extension UIImage {
         return UIImageJPEGRepresentation(resized, 1)
     }
     
+    func scalled() -> UIImage {
+        
+        let cgImage = self.cgImage!
+        
+        let width = self.size.width/2
+        let height = self.size.height/2
+        
+        let context = CGContext(
+            data: nil,
+            width: Int(width),
+            height: Int(height),
+            bitsPerComponent: cgImage.bitsPerComponent,
+            bytesPerRow: cgImage.bytesPerRow,
+            space: cgImage.colorSpace!,
+            bitmapInfo: cgImage.bitmapInfo.rawValue
+        )
+        
+        context?.interpolationQuality = .default
+        
+        context?.draw(cgImage, in: CGRect(origin: .zero, size: CGSize(width: width, height: height)))
+        
+        return context?.makeImage().flatMap(UIImage.init) ?? UIImage()
+    }
+    
     func uploadDataWithoutResize() -> Data? {
         return UIImageJPEGRepresentation(self, 1)
     }

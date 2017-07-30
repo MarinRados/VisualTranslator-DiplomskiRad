@@ -46,7 +46,7 @@ final class TranslationViewModel {
     func getRecognition(onComplete: @escaping (([String])-> Void)) {
         onStartedActivity?()
         let apiKey = "313aa2d25dafe93ac0264926740d7701c04603bb"
-        let version = "2017-06-13"
+        let version = "2017-07-30"
         let visualRecognition = VisualRecognition(apiKey: apiKey, version: version)
         
         let url = getImagePath()
