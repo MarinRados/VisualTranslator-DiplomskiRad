@@ -40,10 +40,11 @@ extension UIImage {
         return UIImageJPEGRepresentation(resized, 1)
     }
     
+    func uploadDataWithoutResize() -> Data? {
+        return UIImageJPEGRepresentation(self, 1)
+    }
+    
     func fixOrientation() -> UIImage {
-        if self.imageOrientation == UIImageOrientation.up {
-            return self
-        }
         
         UIGraphicsBeginImageContextWithOptions(self.size, false, self.scale)
         self.draw(in: CGRect(x: 0.0, y: 0.0, width: self.size.width, height: self.size.height))

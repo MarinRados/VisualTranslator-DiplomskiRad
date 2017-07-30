@@ -14,8 +14,8 @@ final class CameraViewController: BaseViewController, ImagePickerControllerPrese
     
     @IBOutlet weak var cameraButton: UIButton! {
         didSet {
-            cameraButton.tintColor = .white
-            cameraButton.backgroundColor = .grayish
+            cameraButton.tintColor = .camera
+            cameraButton.backgroundColor = .white
             cameraButton.frame = CGRect(x: 100, y: 100, width: 100, height: 100)
             cameraButton.layer.cornerRadius = 0.5 * cameraButton.bounds.size.width
             cameraButton.clipsToBounds = true
@@ -26,8 +26,8 @@ final class CameraViewController: BaseViewController, ImagePickerControllerPrese
     @IBOutlet weak var changeLanguageButton: UIButton! {
         didSet {
             changeLanguageButton.setTitle("Change language", for: .normal)
-            changeLanguageButton.backgroundColor = .grayBlue
-            changeLanguageButton.tintColor = .white
+            changeLanguageButton.backgroundColor = .buttons
+            changeLanguageButton.tintColor = .buttonTitle
             changeLanguageButton.layer.cornerRadius = 5
             changeLanguageButton.layer.borderWidth = 1
             changeLanguageButton.layer.borderColor = UIColor.clear.cgColor
@@ -37,8 +37,8 @@ final class CameraViewController: BaseViewController, ImagePickerControllerPrese
     @IBOutlet weak var currentLanguageLabel: UILabel! {
         didSet {
             currentLanguageLabel.textAlignment = .center
-            currentLanguageLabel.textColor = .black
-            currentLanguageLabel.font = .languageLabel
+            currentLanguageLabel.textColor = .tintColor
+            currentLanguageLabel.font = .mediumLabel
         }
     }
     
@@ -50,7 +50,7 @@ final class CameraViewController: BaseViewController, ImagePickerControllerPrese
     
     @IBAction func cameraButtonTapped(_ sender: Any) {
         presentImagePickerController { [weak self] image in
-            if let data = image.uploadData(resizedToWidth: (self?.view.bounds.width)! - 40) {
+            if let data = image.uploadDataWithoutResize() {
                 //TODO: - unwrap
                 self?.viewModel.goToTranslation(image: data)
             }
@@ -67,6 +67,8 @@ final class CameraViewController: BaseViewController, ImagePickerControllerPrese
         super.viewDidLoad()
         
         navigationItem.title = "Take a picture"
+        
+        self.view.backgroundColor = .background
     }
     
     override func viewWillAppear(_ animated: Bool) {

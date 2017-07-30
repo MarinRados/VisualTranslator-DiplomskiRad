@@ -19,7 +19,7 @@ class LanguageCell: UITableViewCell {
     }
     
     private func style() {
-        backgroundColor = .clear
-        languageLabel.textColor = .black
+        backgroundColor = .background
+        languageLabel.textColor = .white
     }
 }

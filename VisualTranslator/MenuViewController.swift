@@ -15,8 +15,8 @@ final class MenuViewController: BaseViewController {
     @IBOutlet weak var easyQuizWithPicturesButton: UIButton! {
         didSet {
             easyQuizWithPicturesButton.setTitle("Easy quiz with pictures", for: .normal)
-            easyQuizWithPicturesButton.backgroundColor = .grayBlue
-            easyQuizWithPicturesButton.tintColor = .white
+            easyQuizWithPicturesButton.backgroundColor = .buttons
+            easyQuizWithPicturesButton.tintColor = .buttonTitle
             easyQuizWithPicturesButton.layer.cornerRadius = 5
             easyQuizWithPicturesButton.layer.borderWidth = 1
             easyQuizWithPicturesButton.layer.borderColor = UIColor.clear.cgColor
@@ -26,8 +26,8 @@ final class MenuViewController: BaseViewController {
     @IBOutlet weak var hardQuizWithPicturesButton: UIButton! {
         didSet {
             hardQuizWithPicturesButton.setTitle("Hard quiz with pictures", for: .normal)
-            hardQuizWithPicturesButton.backgroundColor = .grayBlue
-            hardQuizWithPicturesButton.tintColor = .white
+            hardQuizWithPicturesButton.backgroundColor = .buttons
+            hardQuizWithPicturesButton.tintColor = .buttonTitle
             hardQuizWithPicturesButton.layer.cornerRadius = 5
             hardQuizWithPicturesButton.layer.borderWidth = 1
             hardQuizWithPicturesButton.layer.borderColor = UIColor.clear.cgColor
@@ -37,8 +37,8 @@ final class MenuViewController: BaseViewController {
     @IBOutlet weak var easyQuizWithoutPictures: UIButton! {
         didSet {
             easyQuizWithoutPictures.setTitle("Easy quiz without pictures", for: .normal)
-            easyQuizWithoutPictures.backgroundColor = .grayBlue
-            easyQuizWithoutPictures.tintColor = .white
+            easyQuizWithoutPictures.backgroundColor = .buttons
+            easyQuizWithoutPictures.tintColor = .buttonTitle
             easyQuizWithoutPictures.layer.cornerRadius = 5
             easyQuizWithoutPictures.layer.borderWidth = 1
             easyQuizWithoutPictures.layer.borderColor = UIColor.clear.cgColor
@@ -48,8 +48,8 @@ final class MenuViewController: BaseViewController {
     @IBOutlet weak var hardQuizWithoutPicturesButton: UIButton!{
         didSet {
             hardQuizWithoutPicturesButton.setTitle("Hard quiz without pictures", for: .normal)
-            hardQuizWithoutPicturesButton.backgroundColor = .grayBlue
-            hardQuizWithoutPicturesButton.tintColor = .white
+            hardQuizWithoutPicturesButton.backgroundColor = .buttons
+            hardQuizWithoutPicturesButton.tintColor = .buttonTitle
             hardQuizWithoutPicturesButton.layer.cornerRadius = 5
             hardQuizWithoutPicturesButton.layer.borderWidth = 1
             hardQuizWithoutPicturesButton.layer.borderColor = UIColor.clear.cgColor
@@ -78,6 +78,8 @@ final class MenuViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.backgroundColor = .background
         
         navigationItem.title = "Take a quiz"
         

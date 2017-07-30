@@ -17,6 +17,8 @@ final class LanguageViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = .background
+        
         let dismissItem = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_clear_white"), style: .plain, target: self, action: #selector(dismissTapped))
         navigationItem.leftBarButtonItem = dismissItem
         
@@ -25,9 +27,9 @@ final class LanguageViewController: BaseViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        tableView.separatorColor = .grayish
+        tableView.separatorColor = .tintColor
         tableView.tableFooterView = UIView.init(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 1))
-        tableView.tableFooterView?.backgroundColor = .grayish
+        tableView.tableFooterView?.backgroundColor = .tintColor
         
         style()
     }
@@ -42,7 +44,7 @@ final class LanguageViewController: BaseViewController {
     // MARK: - Utility
     
     func style() {
-        tableView.backgroundColor = .white
+        tableView.backgroundColor = .background
     }
 }
 

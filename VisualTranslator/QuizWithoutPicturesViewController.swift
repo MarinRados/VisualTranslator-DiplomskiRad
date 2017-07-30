@@ -16,7 +16,7 @@ class QuizWithoutPicturesViewController: BaseViewController, UITextFieldDelegate
     var correctAnswer: String = ""
     var delay = DispatchTime.now()
     let correctAnswerNotification: [String] = ["Correct!", "Great!", "Nice! Keep it up.", "Good job!", "Excellent!"]
-    let incorrectAnswerNotification: [String] = ["Incorrect!", "You can do it next time!", "Close, try again!", "Wrong answer!"]
+    let incorrectAnswerNotification: [String] = ["Incorrect!", "You can do it next time!", "Try again!", "Wrong answer!"]
     
     // MARK: - Outlets
     
@@ -39,8 +39,8 @@ class QuizWithoutPicturesViewController: BaseViewController, UITextFieldDelegate
     @IBOutlet weak var nextButton: UIButton! {
         didSet {
             nextButton.setTitle("Next", for: .normal)
-            nextButton.backgroundColor = .grayBlue
-            nextButton.tintColor = .white
+            nextButton.backgroundColor = .buttons
+            nextButton.tintColor = .buttonTitle
             nextButton.layer.cornerRadius = 5
             nextButton.layer.borderWidth = 1
             nextButton.layer.borderColor = UIColor.clear.cgColor
@@ -53,13 +53,13 @@ class QuizWithoutPicturesViewController: BaseViewController, UITextFieldDelegate
         view.isUserInteractionEnabled = false
         if textField.text?.lowercased() == correctAnswer.lowercased() {
             isCorrect = true
-            correctLabel.textColor = .cyan
+            correctLabel.textColor = .correct
             let randomIndex = Int(arc4random_uniform(UInt32(correctAnswerNotification.count)))
             correctLabel.text = correctAnswerNotification[randomIndex]
             delay = DispatchTime.now() + 1
         } else {
             isCorrect = false
-            correctLabel.textColor = .darkRed
+            correctLabel.textColor = .incorrect
             let randomIndex = Int(arc4random_uniform(UInt32(incorrectAnswerNotification.count)))
             correctLabel.text = incorrectAnswerNotification[randomIndex]
             answerLabel.text = "Correct answer was: \(correctAnswer)"
@@ -74,6 +74,8 @@ class QuizWithoutPicturesViewController: BaseViewController, UITextFieldDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.backgroundColor = .background
         
         automaticallyAdjustsScrollViewInsets = false
         

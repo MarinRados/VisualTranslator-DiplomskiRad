@@ -13,5 +13,5 @@ import UIKit
 extension UIFont {
     
     @nonobjc
-    static let languageLabel = UIFont.systemFont(ofSize: 14, weight: UIFontWeightLight)
+    static let mediumLabel = UIFont.systemFont(ofSize: 16, weight: UIFontWeightMedium)
 }

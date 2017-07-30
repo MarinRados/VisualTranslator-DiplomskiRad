@@ -13,14 +13,23 @@ class InfoViewController: BaseViewController {
     
     @IBOutlet weak var infoLabel: UILabel! {
         didSet {
+            infoLabel.tintColor = .white
             infoLabel.textAlignment = .left
             infoLabel.text = "1. Choose a language you want to learn.\n\n2. Take a picture.\n\n3. Accept one of the recognition results and save the item.\n\n4. Take quizes to test your knowledge in the selected language.\nNote: Quizes require at least 10 items in your library.\n\n5. You can take easy or a hard quiz, with pictures or without. \nQuizes are formed out of 10 questions. \nEach quiz has a multiplier that applies to the score. Easy with pictures x1, hard with pictures x2, easy without pictures x3 and hard without pictures x4.\n\n6. Your score is added to your total score.\n\nHave fun learning new languages!"
         }
     }
 
+    @IBOutlet weak var contentView: UIView! {
+        didSet {
+            contentView.backgroundColor = .background
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.title = "Info"
+        
+        self.view.backgroundColor = .background
     }
 }

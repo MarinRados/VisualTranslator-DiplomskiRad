@@ -11,22 +11,31 @@ import UIKit
 extension UIColor {
     
     @nonobjc
-    static let darkBlue = UIColor(red: 27/255.0, green: 43/255.0, blue: 50/255.0, alpha: 1)
+    static let selected = UIColor(red: 170/255.0, green: 175/255.0, blue: 180/255.0, alpha: 1)
     
     @nonobjc
-    static let grayBlue = UIColor(red: 55/255.0, green: 100/255.0, blue: 111/255.0, alpha: 1)
+    static let navBar = UIColor(red: 255/255.0, green: 255/255.0, blue: 255/255.0, alpha: 1)
     
     @nonobjc
-    static let grayish = UIColor(red: 163/255.0, green: 171/255.0, blue: 175/255.0, alpha: 1)
+    static let camera = UIColor(red: 200/255.0, green: 205/255.0, blue: 210/255.0, alpha: 1)
     
     @nonobjc
-    static let darkGrey = UIColor(red: 163/255.0, green: 171/255.0, blue: 175/255.0, alpha: 1)
+    static let correct = UIColor(red: 124/255.0, green: 284/255.0, blue: 124/255.0, alpha: 1)
     
     @nonobjc
-    static let darkRed = UIColor(red: 178/255.0, green: 46/255.0, blue: 47/255.0, alpha: 1)
+    static let incorrect = UIColor(red: 255/255.0, green: 83/255.0, blue: 13/255.0, alpha: 1)
     
     @nonobjc
-    static let cyan = UIColor(red: 0/255.0, green: 163/255.0, blue: 136/255.0, alpha: 1)
+    static let buttons = UIColor(red: 255/255.0, green: 255/255.0, blue: 255/255.0, alpha: 1)
+    
+    @nonobjc
+    static let background = UIColor(red: 0/255.0, green: 190/255.0, blue: 223/255.0, alpha: 1)
+    
+    @nonobjc
+    static let tintColor = UIColor(red: 255/255.0, green: 255/255.0, blue: 255/255.0, alpha: 1)
+    
+    @nonobjc
+    static let buttonTitle = UIColor(red: 0/255.0, green: 170/255.0, blue: 203/255.0, alpha: 1)
 }
 
 

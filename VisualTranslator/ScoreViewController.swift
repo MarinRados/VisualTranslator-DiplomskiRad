@@ -17,8 +17,8 @@ class ScoreViewController: BaseViewController {
     @IBOutlet weak var menuButton: UIButton! {
         didSet {
             menuButton.setTitle("Done", for: .normal)
-            menuButton.backgroundColor = .grayBlue
-            menuButton.tintColor = .white
+            menuButton.backgroundColor = .buttons
+            menuButton.tintColor = .buttonTitle
             menuButton.layer.cornerRadius = 5
             menuButton.layer.borderWidth = 1
             menuButton.layer.borderColor = UIColor.clear.cgColor
@@ -28,24 +28,32 @@ class ScoreViewController: BaseViewController {
     @IBOutlet weak var infoLabel: UILabel! {
         didSet {
             infoLabel.textAlignment = .center
+            infoLabel.font = .mediumLabel
+            infoLabel.tintColor = .white
         }
     }
     
     @IBOutlet weak var scoreLabel: UILabel! {
         didSet {
             scoreLabel.textAlignment = .center
+            scoreLabel.font = .mediumLabel
+            scoreLabel.tintColor = .white
         }
     }
     
     @IBOutlet weak var modifierLabel: UILabel! {
         didSet {
             modifierLabel.textAlignment = .center
+            modifierLabel.font = .mediumLabel
+            modifierLabel.tintColor = .white
         }
     }
     
     @IBOutlet weak var totalScoreLabel: UILabel! {
         didSet {
             totalScoreLabel.textAlignment = .center
+            totalScoreLabel.font = .mediumLabel
+            totalScoreLabel.tintColor = .white
         }
     }
     
@@ -57,6 +65,8 @@ class ScoreViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.backgroundColor = .background
         
         navigationItem.title = "Score"
         

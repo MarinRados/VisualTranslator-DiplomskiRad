@@ -115,4 +115,8 @@ final class TranslationViewModel {
             self.onFinished?()
         }
     }
+    
+    func cancel() {
+        onFinished?()
+    }
 }
