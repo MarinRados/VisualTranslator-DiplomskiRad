@@ -22,7 +22,7 @@ final class TranslationViewController: UIViewController {
         didSet {
             if let data = viewModel.image {
                 guard let image = UIImage(data: data) else { return }
-                if (image.size.height > image.size.width) {
+                if (image.size.height > image.size.width && image.imageOrientation != .up) {
                     let fixedImage = UIImage(cgImage: (image.cgImage)!, scale: image.scale, orientation: UIImageOrientation.right)
                     imageView.image = fixedImage
                 } else {
