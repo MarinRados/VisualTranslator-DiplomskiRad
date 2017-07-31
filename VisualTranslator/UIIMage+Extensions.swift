@@ -10,71 +10,22 @@ import UIKit
 
 extension UIImage {
     
-    func resized(toWidth width: CGFloat) -> UIImage {
+    func scaled() -> UIImage {
         
-        let cgImage = self.cgImage!
+        let width = self.size.width / 3
+        let height = self.size.height / 3
         
-        let aspectRatio = self.size.height / self.size.width
-        let height = width * aspectRatio
+        let size = CGSize(width: width, height: height)
         
-        let context = CGContext(
-            data: nil,
-            width: Int(width),
-            height: Int(height),
-            bitsPerComponent: cgImage.bitsPerComponent,
-            bytesPerRow: cgImage.bytesPerRow,
-            space: cgImage.colorSpace!,
-            bitmapInfo: cgImage.bitmapInfo.rawValue
-        )
+        UIGraphicsBeginImageContext(size)
+        self.draw(in: CGRect(origin: .zero, size: size))
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
         
-        context?.interpolationQuality = .default
-        
-        context?.draw(cgImage, in: CGRect(origin: .zero, size: CGSize(width: width, height: height)))
-        
-        return context?.makeImage().flatMap(UIImage.init) ?? UIImage()
-    }
-    
-    func uploadData(resizedToWidth width: CGFloat) -> Data? {
-        
-        let resized = self.resized(toWidth: width)
-        return UIImageJPEGRepresentation(resized, 1)
-    }
-    
-    func scalled() -> UIImage {
-        
-        let cgImage = self.cgImage!
-        
-        let width = self.size.width/2
-        let height = self.size.height/2
-        
-        let context = CGContext(
-            data: nil,
-            width: Int(width),
-            height: Int(height),
-            bitsPerComponent: cgImage.bitsPerComponent,
-            bytesPerRow: cgImage.bytesPerRow,
-            space: cgImage.colorSpace!,
-            bitmapInfo: cgImage.bitmapInfo.rawValue
-        )
-        
-        context?.interpolationQuality = .default
-        
-        context?.draw(cgImage, in: CGRect(origin: .zero, size: CGSize(width: width, height: height)))
-        
-        return context?.makeImage().flatMap(UIImage.init) ?? UIImage()
+        return image!
     }
     
     func uploadDataWithoutResize() -> Data? {
-        return UIImageJPEGRepresentation(self, 1)
-    }
-    
-    func fixOrientation() -> UIImage {
-        
-        UIGraphicsBeginImageContextWithOptions(self.size, false, self.scale)
-        self.draw(in: CGRect(x: 0.0, y: 0.0, width: self.size.width, height: self.size.height))
-        let normalizedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-        UIGraphicsEndImageContext()
-        
-        return normalizedImage;
+        return UIImageJPEGRepresentation(self.scaled(), 0.7)
     }
 }

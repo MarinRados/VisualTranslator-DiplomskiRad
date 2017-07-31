@@ -95,7 +95,7 @@ class QuizWithPicturesViewController: BaseViewController, UITextFieldDelegate {
         wordLabel.text = question.originalText
         correctAnswer = question.translatedText
         if let data = question.image {
-            let image = UIImage(data: data)?.fixOrientation()
+            let image = UIImage(data: data)
             imageView.image = image
             imageView.contentMode = .scaleAspectFit
         }

@@ -50,7 +50,14 @@ final class TranslationViewModel {
         let visualRecognition = VisualRecognition(apiKey: apiKey, version: version)
         
         let url = getImagePath()
-        visualRecognition.classify(imageFile: url) { images in
+        visualRecognition.classify(
+            imageFile: url,
+            failure: { error in
+            
+                print(error as NSError)
+            },
+                                   
+            success: { images in
             
             guard let firstImage = images.images.first,
             let firstClassifier = firstImage.classifiers.first else { return }
@@ -70,7 +77,7 @@ final class TranslationViewModel {
                 self.onEndedActivity?()
                 onComplete(recognitions)
             }
-        }
+        })
     }
     
     func translate(_ word: String) {
