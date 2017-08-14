@@ -40,6 +40,8 @@ final class TranslationViewController: UIViewController {
             firstChoiceButton.layer.cornerRadius = 5
             firstChoiceButton.layer.borderWidth = 1
             firstChoiceButton.layer.borderColor = UIColor.clear.cgColor
+            firstChoiceButton.titleLabel?.lineBreakMode = .byWordWrapping
+            firstChoiceButton.titleLabel?.textAlignment = .center
         }
     }
     
@@ -50,6 +52,8 @@ final class TranslationViewController: UIViewController {
             secondChoiceButton.layer.cornerRadius = 5
             secondChoiceButton.layer.borderWidth = 1
             secondChoiceButton.layer.borderColor = UIColor.clear.cgColor
+            secondChoiceButton.titleLabel?.lineBreakMode = .byWordWrapping
+            secondChoiceButton.titleLabel?.textAlignment = .center
         }
     }
     
@@ -61,6 +65,8 @@ final class TranslationViewController: UIViewController {
             thirdChoiceButton.layer.cornerRadius = 5
             thirdChoiceButton.layer.borderWidth = 1
             thirdChoiceButton.layer.borderColor = UIColor.clear.cgColor
+            thirdChoiceButton.titleLabel?.lineBreakMode = .byWordWrapping
+            thirdChoiceButton.titleLabel?.textAlignment = .center
         }
     }
     
@@ -72,6 +78,8 @@ final class TranslationViewController: UIViewController {
             fourthChoiceButton.layer.cornerRadius = 5
             fourthChoiceButton.layer.borderWidth = 1
             fourthChoiceButton.layer.borderColor = UIColor.clear.cgColor
+            fourthChoiceButton.titleLabel?.lineBreakMode = .byWordWrapping
+            fourthChoiceButton.titleLabel?.textAlignment = .center
         }
     }
     

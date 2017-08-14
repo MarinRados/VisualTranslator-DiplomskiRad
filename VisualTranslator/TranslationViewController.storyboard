@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wVS-Pv-qN3">
-                                <rect key="frame" x="40" y="30" width="295" height="357"/>
+                                <rect key="frame" x="40" y="30" width="295" height="337"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L2D-Wu-HKN">
                                 <rect key="frame" x="167" y="537" width="42" height="20"/>
@@ -45,20 +45,26 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="dJC-zx-rEc">
-                                <rect key="frame" x="36" y="427" width="303" height="90"/>
+                                <rect key="frame" x="36" y="407" width="303" height="110"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ysF-1M-Wxp">
-                                        <rect key="frame" x="0.0" y="0.0" width="303" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="303" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zha-ci-N6O">
-                                                <rect key="frame" x="0.0" y="0.0" width="146.5" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="146.5" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="IxE-VM-5DW"/>
+                                                </constraints>
                                                 <connections>
                                                     <action selector="changeTranslation:" destination="aqo-gV-KPp" eventType="touchUpInside" id="YEx-Qo-QVP"/>
                                                     <action selector="translationButtonTapped:" destination="aqo-gV-KPp" eventType="touchUpInside" id="e84-53-GNU"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbn-Yx-1Hs">
-                                                <rect key="frame" x="156.5" y="0.0" width="146.5" height="30"/>
+                                                <rect key="frame" x="156.5" y="0.0" width="146.5" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="BtT-XH-6al"/>
+                                                </constraints>
                                                 <connections>
                                                     <action selector="changeTranslation:" destination="aqo-gV-KPp" eventType="touchUpInside" id="UAN-nt-Coq"/>
                                                     <action selector="translationButtonTapped:" destination="aqo-gV-KPp" eventType="touchUpInside" id="d3c-EI-aW5"/>
@@ -67,17 +73,23 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="edx-Ro-JjL">
-                                        <rect key="frame" x="0.0" y="60" width="303" height="30"/>
+                                        <rect key="frame" x="0.0" y="70" width="303" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZKO-aJ-8do">
-                                                <rect key="frame" x="0.0" y="0.0" width="146.5" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="146.5" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="AMf-Ct-MMq"/>
+                                                </constraints>
                                                 <connections>
                                                     <action selector="changeTranslation:" destination="aqo-gV-KPp" eventType="touchUpInside" id="NIV-v4-F0X"/>
                                                     <action selector="translationButtonTapped:" destination="aqo-gV-KPp" eventType="touchUpInside" id="qiy-UY-Co9"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ylb-tQ-kDs">
-                                                <rect key="frame" x="156.5" y="0.0" width="146.5" height="30"/>
+                                                <rect key="frame" x="156.5" y="0.0" width="146.5" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="0Qq-O4-Lca"/>
+                                                </constraints>
                                                 <connections>
                                                     <action selector="changeTranslation:" destination="aqo-gV-KPp" eventType="touchUpInside" id="hG1-RB-El4"/>
                                                     <action selector="translationButtonTapped:" destination="aqo-gV-KPp" eventType="touchUpInside" id="nK2-cs-L5m"/>
