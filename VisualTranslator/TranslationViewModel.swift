@@ -45,8 +45,8 @@ final class TranslationViewModel {
     
     func getRecognition(onComplete: @escaping (([String])-> Void)) {
         onStartedActivity?()
-        let apiKey = "69642e6b7d9e0f87db09537320921cdfd5a66f4a"
-        let version = "2017-08-14"
+        let apiKey = "05b11944b265fa137ce01c65ed0904b72efed93e"
+        let version = "2017-09-16"
         let visualRecognition = VisualRecognition(apiKey: apiKey, version: version)
         
         let url = getImagePath()
@@ -82,8 +82,8 @@ final class TranslationViewModel {
     
     func translate(_ word: String) {
         onStartedActivity?()
-        let username = "c7b0dac6-a5e9-4fb5-9bd5-9dd0b403329e"
-        let password = "4FJsYH5dZYI8"
+        let username = "4219c977-ca0d-4d48-a488-91e36f8a8f77"
+        let password = "Dn6x3eYYl3vj"
         let languageTranslator = LanguageTranslator(username: username, password: password)
         
         guard let targetLanguage = persistenceService.currentLanguage?.abrv else { return }
